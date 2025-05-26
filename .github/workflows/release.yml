@@ -1,0 +1,31 @@
+name: Release App ZIP
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  zip-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set output name
+        id: vars
+        run: echo "tag=${GITHUB_REF##*/}" >> "$GITHUB_OUTPUT"
+
+      - name: Create ZIP of app/
+        run: |
+          mkdir -p dist
+          cd app
+          zip -r "../dist/csk-app-default-${{ steps.vars.outputs.tag }}.zip" .
+
+      - name: Upload release asset
+        uses: softprops/action-gh-release@v1
+        with:
+          files: dist/*.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,89 @@
+# ------------------------------------------
+# 🔒 Disable PHP execution for security
+# ------------------------------------------
+<FilesMatch "\.(php|php[0-9]*)$">
+	Order allow,deny
+	Deny from all
+</FilesMatch>
+
+# Alternative: Serve PHP files as plain text (uncomment if preferred)
+# <FilesMatch "\.(php|php[0-9]*)$">
+# 	SetHandler none
+# 	ForceType text/plain
+# </FilesMatch>
+
+# ------------------------------------------
+# 🚀 Enable browser caching for static files
+# ------------------------------------------
+<IfModule mod_expires.c>
+	ExpiresActive On
+
+	# Set long expiration for common static file types
+	ExpiresByType image/jpg "access plus 1 year"
+	ExpiresByType image/jpeg "access plus 1 year"
+	ExpiresByType image/gif "access plus 1 year"
+	ExpiresByType image/png "access plus 1 year"
+	ExpiresByType image/svg+xml "access plus 1 year"
+	ExpiresByType text/css "access plus 1 month"
+	ExpiresByType text/javascript "access plus 1 month"
+	ExpiresByType application/javascript "access plus 1 month"
+	ExpiresByType application/x-javascript "access plus 1 month"
+	ExpiresByType application/font-woff2 "access plus 1 year"
+	ExpiresByType application/font-woff "access plus 1 year"
+	ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
+	ExpiresByType font/ttf "access plus 1 year"
+	ExpiresByType font/otf "access plus 1 year"
+</IfModule>
+
+# ------------------------------------------
+# 💨 Enable GZIP compression
+# ------------------------------------------
+<IfModule mod_deflate.c>
+	AddOutputFilterByType DEFLATE text/plain
+	AddOutputFilterByType DEFLATE text/html
+	AddOutputFilterByType DEFLATE text/xml
+	AddOutputFilterByType DEFLATE text/css
+	AddOutputFilterByType DEFLATE application/javascript
+	AddOutputFilterByType DEFLATE application/x-javascript
+	AddOutputFilterByType DEFLATE application/json
+	AddOutputFilterByType DEFLATE application/xml
+	AddOutputFilterByType DEFLATE application/font-woff2
+	AddOutputFilterByType DEFLATE application/font-woff
+	AddOutputFilterByType DEFLATE font/ttf
+	AddOutputFilterByType DEFLATE font/otf
+
+	# Optional: compress everything except images
+	SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip dont-vary
+</IfModule>
+
+# ------------------------------------------
+# 🎯 Leverage cache-control headers
+# ------------------------------------------
+<IfModule mod_headers.c>
+	<FilesMatch "\.(ico|jpg|jpeg|png|gif|svg|css|js|woff|woff2|ttf|otf|eot)$">
+		Header set Cache-Control "public, max-age=31536000, immutable"
+	</FilesMatch>
+</IfModule>
+
+# ------------------------------------------
+# 🛡️ Basic security headers
+# ------------------------------------------
+<IfModule mod_headers.c>
+	Header set X-Content-Type-Options "nosniff"
+	Header set X-Frame-Options "SAMEORIGIN"
+	Header set X-XSS-Protection "1; mode=block"
+	Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# ------------------------------------------
+# 🔍 Optional: Redirect to HTTPS if not already handled globally
+# ------------------------------------------
+# RewriteEngine On
+# RewriteCond %{HTTPS} off
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ------------------------------------------
+# 🧼 Optional: Remove trailing slashes
+# ------------------------------------------
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^(.+)/$ /$1 [R=301,L]

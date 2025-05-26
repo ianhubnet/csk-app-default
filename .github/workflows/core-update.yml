@@ -1,0 +1,35 @@
+name: Update core submodule on core-update
+
+on:
+  repository_dispatch:
+    types: [core-update]
+
+jobs:
+  update_core_submodule:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo with submodules
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.CSK_PAT }}
+          submodules: recursive
+
+      - name: Update core submodule pointer
+        run: |
+          git submodule update --remote app/skeleton
+          git add app/skeleton
+          if ! git diff --quiet; then
+            git commit -m "Update core submodule pointer due to core changes"
+            git push
+          else
+            echo "Core submodule already up to date"
+          fi
+
+      - name: Notify csk-projects that app was updated
+        run: |
+          curl -X POST \
+            -H "Authorization: Bearer ${{ secrets.CSK_PAT }}" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/ianhubnet/csk-projects/dispatches \
+            -d "$(jq -n --arg app "${{ github.repository }}" '{"event_type":"app-updated", "client_payload":{"app":$app}}')"

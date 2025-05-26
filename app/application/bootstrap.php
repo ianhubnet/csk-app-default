@@ -1,0 +1,82 @@
+<?php
+defined('BASEPATH') OR die;
+
+/*
+|--------------------------------------------------------------------------
+| Application Info
+|--------------------------------------------------------------------------
+|
+| Here you can define your application global information.
+|
+|	KB_LABEL:	App name (default: CI Skeleton)
+|	KB_SHORT:	App short name (default: CSK)
+|	KB_SLOGAN:	App default description.
+|	KB_AUTHOR:	App global author name.
+| 	KB_KEYWORDS:	App name (default: combines label and description)
+|
+*/
+const KB_LABEL      = KPlatform::LABEL;
+const KB_SHORT      = KPlatform::SHORT;
+const KB_SLOGAN     = KPlatform::SLOGAN;
+const KB_AUTHOR     = KPlatform::AUTHOR;
+const KB_KEYWORDS   = KPlatform::KEYWORDS;
+
+/**
+ * Because Web Hosting providers set a limit to how my
+ * PHP scripts you have running at a single time, setting
+ * a limit to reqests that will be used by KB_Router can
+ * be handy.
+ *
+ * However, there is another way (though not test), using .htaccess
+ * by passing the following code somewhere:
+ *
+ * <IfModule mod_limitipconn.c>
+ *     MaxConnPerIP 10 # limit to 10
+ *     OnlyIPLimit application/x-php
+ * </IfModule>
+ *
+ * The default limit used by KB_Router is 20, if you feel it is too high
+ * or too low, please uncomment the line below and set the limit you wish.
+ */
+// const KB_REQUEST_LIMIT = 20;
+
+// --------------------------------------------------------------------
+// YOU MAY EDIT LINES BELOW.
+// --------------------------------------------------------------------
+
+// Application classes.
+// Autoloader::add_classes(array(
+	/**
+	 * Add classes you want to add/override here.
+	 * @example: 'Classname' => APPPATH.'libraries/Classname.php'
+	 */
+// ));
+
+/**
+ * This filter is fired before loading default language files.
+ * @since 2.18
+ */
+// add_filter('language_files', function($files) {
+// 	return $files; // always return $files
+// });
+
+/**
+ * This action is fired before Skeleton libraries are loaded.
+ * @since 	2.13
+ */
+// add_action('init', function() {
+// 	// Do your magic.
+// });
+
+// --------------------------------------------------------------------
+// Additional modules and themes details.
+// --------------------------------------------------------------------
+
+/**
+ * In case you want to add more details to modules headers, please
+ * use the action below.
+ * @since 	2.12
+ */
+// add_action('modules_headers', function($headers) {
+// 	return $headers;
+// });

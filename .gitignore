@@ -1,0 +1,99 @@
+# Ignore files inside _dev folder(s).
+_dev
+*_dev.*
+
+# Ignore unnecessary folders.
+.DS_Store
+.phpintel
+
+# Ignore backup files.
+!/app/application/backups/*
+/app/application/backups/*/*
+
+# Ignore cache files.
+!/app/application/cache/*
+/app/application/cache/*/*
+/app/application/cache/seo_*
+/app/application/cache/error_*
+/app/application/cache/*.lock
+/app/application/cache/*.json
+!/skeleton/cache/sessions/
+
+# Ignore some files files.
+# application/**/*
+/app/application/controllers/*
+/app/application/core/*
+/app/application/helpers/*
+/app/application/hooks/*
+/app/application/logs/*
+/app/application/migrations/*
+/app/application/models/*
+/app/application/modules/*
+/app/application/third_party/*
+/app/application/views/*
+!/app/application/**/.gitkeep
+
+# Remove generated php file.
+/app/application/config/base_controller.php
+/app/application/config/*/base_controller.php
+/app/application/config/config.php
+!/app/application/config/*/config.php
+/app/application/config/database.php
+/app/application/config/*/database.php
+/app/application/config/trusted_hosts.php
+/app/application/config/*/trusted_hosts.php
+/app/application/config/*/language.php
+/app/application/config/language.php
+/app/application/config/blocked_ips.txt
+
+# Content: cache folder.
+!/app/content/cache/*
+/app/content/cache/*
+!/app/content/cache/index.html
+
+# Content: captcha folder.
+!/app/content/captcha/*
+/app/content/captcha/*
+!/app/content/captcha/index.html
+
+# Ignore all uploaded files.
+!/app/content/uploads/*
+/app/content/uploads/*
+!/app/content/uploads/index.html
+
+# Ignore all public modules except default ones.
+# Think of removing or commenting the following lines
+# if you want your plugins to be pushed to your repo.
+!/app/content/modules/*
+/app/content/modules/*
+!/app/content/modules/index.html
+!/app/content/modules/dummy
+
+# Ignore all plugins except default ones.
+# Think of removing or commenting the following lines
+# if you want your plugins to be pushed to your repo.
+!/app/content/plugins/*
+/app/content/plugins/*
+!/app/content/plugins/index.html
+
+# Ignore all themes except the default one.
+# Think of removing or commenting the following lines
+# if you want your themes to be pushed to your repo.
+!/app/content/themes/*
+/app/content/themes/*
+!/app/content/themes/index.html
+!/app/content/themes/default
+
+# Sublime Text cache files
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-*
+*_bak*.*
+*.sublime-project
+*.sublime-workspace
+
+# keep all .htaccess, .gitkeep and index.html
+!**/.htaccess
+!**/.gitkeep
+!**/index.html
