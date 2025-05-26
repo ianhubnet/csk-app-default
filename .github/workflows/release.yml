@@ -33,7 +33,9 @@ jobs:
             index.php \
             favicon.ico \
             .htaccess \
-            -x "content/common/*"
+            -x "content/common/*" \
+            -x "content/themes/**" \
+            -i "content/themes/index.html"
 
       - name: Get previous tag for diff
         id: prevtag
