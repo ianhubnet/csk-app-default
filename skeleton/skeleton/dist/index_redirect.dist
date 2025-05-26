@@ -1,0 +1,1 @@
+header("Location: {site_url}", true, 307);

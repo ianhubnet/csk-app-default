@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+	- given-names: "Kader"
+		family-names: "Bouyakoub"
+		orcid: "https://orcid.org/0000-0002-1184-8061"
+title: "CI Skeleton - Default Theme"
+version: 1.0
+date-released: 2025-05-19
+url: "https://github.com/ianhubnet/csk-theme-default"

@@ -1,0 +1,22 @@
+# Ignore files inside _dev folder(s).
+_dev
+*_dev.*
+
+# Ignore unnecessary folders.
+.DS_Store
+.phpintel
+license.txt
+
+# Sublime Text cache files
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-*
+*_bak*.*
+*.sublime-project
+*.sublime-workspace
+
+# keep all .htaccess, .gitkeep and index.html
+!**/.htaccess
+!**/.gitkeep
+!**/index.html

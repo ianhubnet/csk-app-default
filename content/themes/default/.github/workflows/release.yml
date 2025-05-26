@@ -1,0 +1,64 @@
+name: Release Module/Theme
+
+on:
+  push:
+    tags:
+      - '*'
+
+permissions:
+  contents: write  # Needed for creating releases
+
+jobs:
+  build:
+    name: Package and Release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up variables
+        id: vars
+        run: |
+          TAG_NAME=${GITHUB_REF#refs/tags/}
+          MAIN_FOLDER=$(ls -d */ | head -n1 | sed 's#/##')
+          echo "tag=$TAG_NAME" >> $GITHUB_OUTPUT
+          echo "folder=$MAIN_FOLDER" >> $GITHUB_OUTPUT
+
+      - name: Create full ZIP (exclude dotfiles)
+        run: |
+          zip -r "${{ steps.vars.outputs.folder }}-${{ steps.vars.outputs.tag }}.zip" "${{ steps.vars.outputs.folder }}" \
+            -x "${{ steps.vars.outputs.folder }}/.git/*" \
+               "${{ steps.vars.outputs.folder }}/.github/*" \
+               "${{ steps.vars.outputs.folder }}/.gitignore" \
+               "${{ steps.vars.outputs.folder }}/.gitattributes" \
+               "${{ steps.vars.outputs.folder }}/.editorconfig" \
+               "${{ steps.vars.outputs.folder }}/.vscode/*"
+
+      - name: Get previous tag
+        id: previous
+        run: |
+          PREV_TAG=$(git tag --sort=-creatordate | grep -v "${{ steps.vars.outputs.tag }}" | head -n1 || echo "")
+          echo "prev_tag=$PREV_TAG" >> $GITHUB_OUTPUT
+
+      - name: Create update ZIP (only changed files)
+        if: steps.previous.outputs.prev_tag != ''
+        run: |
+          mkdir changed
+          git diff --name-only ${{ steps.previous.outputs.prev_tag }} ${{ steps.vars.outputs.tag }} | grep "^${{ steps.vars.outputs.folder }}/" | while read file; do
+            mkdir -p "changed/$(dirname "$file")"
+            cp "$file" "changed/$file"
+          done
+          cd changed
+          zip -r "../${{ steps.vars.outputs.folder }}-update-${{ steps.vars.outputs.tag }}.zip" .
+          cd ..
+
+      - name: Create GitHub Release and Upload ZIPs
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.vars.outputs.tag }}
+          files: |
+            ${{ steps.vars.outputs.folder }}-${{ steps.vars.outputs.tag }}.zip
+            ${{ steps.vars.outputs.folder }}-update-${{ steps.vars.outputs.tag }}.zip

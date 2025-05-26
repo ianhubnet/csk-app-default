@@ -1,0 +1,26 @@
+defined('BASEPATH') OR die;
+
+/*
+|--------------------------------------------------------------------------
+| Default Language
+|--------------------------------------------------------------------------
+|
+| This determines which set of language files should be used. Make sure
+| there is an available translation if you intend to use something other
+| than english.
+|
+*/
+$config['language'] = '{language}';
+
+/*
+|--------------------------------------------------------------------------
+| Available Languages
+|--------------------------------------------------------------------------
+|
+| This determines the list of available languages for your application.
+| Languages that are really available to use are the ones that are present
+| in CI Skeleton core language directory as well as application language
+| directory.
+|
+*/
+$config['languages'] = array('{language}');

@@ -1,0 +1,32 @@
+defined('BASEPATH') OR die;
+
+/*
+|--------------------------------------------------------------------------
+| Restrict Site Access to Trusted Hosts
+|--------------------------------------------------------------------------
+|
+| 'trusted_hosts_only'
+|
+|	If set to TRUE (recommended on production), the application will only
+|	respond to requests from explicitly trusted hosts.
+|
+| 'trusted_hosts'
+|
+|	Define a list of hostnames or IP addresses allowed to access the site.
+|	If this array is empty, only localhost addresses (127.0.0.1, ::1) will
+|	be permitted by default.
+|
+| You can specify exact hostnames or use regular expressions for flexible
+| pattern matching (via preg_match).
+|
+| Examples:
+|	'localhost'                  // exact match
+|	'127.0.0.1'                  // exact match
+|	'::1'                        // exact match
+|	'yoursite.com'               // exact match
+|	'dev.yoursite.com'           // exact match
+|	'(?:[^\.]+\.)?example.com'   // regex: matches example.com and subdomains
+|
+*/
+$config['trusted_hosts_only'] = (ENVIRONMENT === 'production');
+$config['trusted_hosts']      = array('{trusted_host}');

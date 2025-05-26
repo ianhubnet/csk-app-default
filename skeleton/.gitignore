@@ -1,0 +1,45 @@
+# Ignore files inside _dev folder(s).
+_dev
+*_dev.*
+
+# Ignore unnecessary folders.
+.DS_Store
+.phpintel
+
+# Skeleton files.
+skeleton/modules/*
+
+# Ignore cache files.
+!/skeleton/cache/sessions/
+
+# Ignore all languages but Arabic, English and French.
+/skeleton/language/*
+!/skeleton/language/english/
+!/skeleton/language/english/*
+!/skeleton/language/french/
+!/skeleton/language/french/*
+!/skeleton/language/arabic/
+!/skeleton/language/arabic/*
+
+# === SYSTEM LANGUAGES ===
+/skeleton/system/language/*
+!/skeleton/system/language/english/
+!/skeleton/system/language/english/*
+!/skeleton/system/language/french/
+!/skeleton/system/language/french/*
+!/skeleton/system/language/arabic/
+!/skeleton/system/language/arabic/*
+
+# Sublime Text cache files
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-*
+*_bak*.*
+*.sublime-project
+*.sublime-workspace
+
+# keep all .htaccess, .gitkeep and index.html
+!**/.htaccess
+!**/.gitkeep
+!**/index.html
