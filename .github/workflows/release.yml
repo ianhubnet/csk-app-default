@@ -12,20 +12,50 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0   # Needed to get previous tags for diff
+          submodules: false
 
-      - name: Set output name
+      - name: Set variables
         id: vars
-        run: echo "tag=${GITHUB_REF##*/}" >> "$GITHUB_OUTPUT"
+        run: |
+          APP_NAME=$(basename "$PWD")    # Use current folder name as app name
+          TAG=${GITHUB_REF##*/}
+          echo "app_name=$APP_NAME" >> $GITHUB_OUTPUT
+          echo "tag=$TAG" >> $GITHUB_OUTPUT
 
-      - name: Create ZIP of app/
+      - name: Create full ZIP of app (selected files only)
         run: |
           mkdir -p dist
-          cd app
-          zip -r "../dist/csk-app-default-${{ steps.vars.outputs.tag }}.zip" .
+          zip -r "dist/${{ steps.vars.outputs.app_name }}-${{ steps.vars.outputs.tag }}.zip" \
+            application \
+            content \
+            index.php \
+            favicon.ico \
+            .htaccess \
+            -x "content/common/*"
 
-      - name: Upload release asset
+      - name: Get previous tag for diff
+        id: prevtag
+        run: |
+          # Find previous tag sorted by creation date ignoring current tag
+          PREV_TAG=$(git tag --sort=-creatordate | grep -v ${{ steps.vars.outputs.tag }} | head -n1)
+          echo "prev_tag=$PREV_TAG" >> $GITHUB_OUTPUT
+
+      - name: Create update ZIP with changed files
+        if: steps.prevtag.outputs.prev_tag != ''
+        run: |
+          mkdir -p dist
+          git diff --name-only ${{ steps.prevtag.outputs.prev_tag }} ${{ steps.vars.outputs.tag }} > changed_files.txt
+          # Filter only existing files (ignore deleted files)
+          grep -Fx -f changed_files.txt <(git ls-files) > changed_existing_files.txt || true
+          zip -@ "dist/${{ steps.vars.outputs.app_name }}-update-${{ steps.vars.outputs.tag }}.zip" < changed_existing_files.txt
+
+      - name: Upload release assets
         uses: softprops/action-gh-release@v1
         with:
-          files: dist/*.zip
+          files: |
+            dist/${{ steps.vars.outputs.app_name }}-${{ steps.vars.outputs.tag }}.zip
+            dist/${{ steps.vars.outputs.app_name }}-update-${{ steps.vars.outputs.tag }}.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
