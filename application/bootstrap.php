@@ -5,7 +5,7 @@ defined('BASEPATH') OR die;
  * CI Skeleton Application version.
  * @since 	2.145
  */
-const APP_VERSION = '1.0';
+const APP_VERSION = '1.1';
 
 /*
 |--------------------------------------------------------------------------
