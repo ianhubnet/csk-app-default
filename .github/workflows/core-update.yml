@@ -17,8 +17,8 @@ jobs:
 
       - name: Update core submodule pointer
         run: |
-          git submodule update --remote app/skeleton
-          git add app/skeleton
+          git submodule update --remote skeleton
+          git add skeleton
           if ! git diff --quiet; then
             git commit -m "Update core submodule pointer due to core changes"
             git push

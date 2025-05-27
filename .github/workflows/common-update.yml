@@ -17,8 +17,8 @@ jobs:
 
       - name: Update common submodule pointer
         run: |
-          git submodule update --remote app/content/common
-          git add app/content/common
+          git submodule update --remote content/common
+          git add content/common
           if ! git diff --quiet; then
             git commit -m "Update common submodule pointer due to common changes"
             git push

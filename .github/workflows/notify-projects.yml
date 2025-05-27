@@ -10,6 +10,15 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - '.dev/**'
+      - '.gitdocs/**'
+      - '.github/**'
+      - '.gitignore'
+      - '.gitattributes'
+      - '.editorconfig'
+      - 'CITATION.cff'
+      - '*.todolist'
 
 jobs:
   notify:
@@ -19,8 +28,8 @@ jobs:
         shell: bash
         run: |
           REPO="${{ github.repository }}"
-          NAME="${REPO##*/}"
-          STRIP="csk-app-"
+          STRIP="${{ vars.CSK_STRIP }}"
+          NAME="${REPO_NAME#"$STRIP"}"
 
           curl -X POST \
             -H "Authorization: Bearer ${{ secrets.CSK_PAT }}" \
