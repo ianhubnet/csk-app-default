@@ -1,4 +1,4 @@
-name: Update core submodule on core-update
+name: Update Core Files (skeleton)
 
 on:
   repository_dispatch:
@@ -25,11 +25,3 @@ jobs:
           else
             echo "Core submodule already up to date"
           fi
-
-      - name: Notify csk-projects that app was updated
-        run: |
-          curl -X POST \
-            -H "Authorization: Bearer ${{ secrets.CSK_PAT }}" \
-            -H "Accept: application/vnd.github+json" \
-            https://api.github.com/repos/ianhubnet/csk-projects/dispatches \
-            -d "$(jq -n --arg app "${{ github.repository }}" '{"event_type":"app-updated", "client_payload":{"app":$app}}')"
