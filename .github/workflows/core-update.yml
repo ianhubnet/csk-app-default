@@ -17,11 +17,21 @@ jobs:
 
       - name: Update core submodule pointer
         run: |
-          git submodule update --remote skeleton
-          git add skeleton
-          if ! git diff --quiet; then
-            git commit -m "Update core submodule pointer due to core changes"
+          git config --global user.name "CSK Bot"
+          git config --global user.email "skeleton@ianhub.com"
+
+          # Explicitly fetch latest submodule refs
+          git submodule update --init --recursive
+          cd skeleton
+          git fetch origin
+          git checkout origin/main
+          cd ..
+
+           # Stage the updated submodule pointer
+           git add skeleton
+          if ! git diff --cached --quiet; then
+            git commit -m "🔄 Update core submodule pointer"
             git push
           else
-            echo "Core submodule already up to date"
+            echo "✅ Core submodule already up to date"
           fi
