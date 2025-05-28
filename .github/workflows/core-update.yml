@@ -5,7 +5,7 @@ on:
     types: [core-update]
 
 jobs:
-  update_core_submodule:
+  Update-Core-Submodule:
     runs-on: ubuntu-latest
 
     steps:
@@ -14,24 +14,10 @@ jobs:
         with:
           token: ${{ secrets.CSK_PAT }}
           submodules: recursive
+          fetch-depth: 0
 
       - name: Update core submodule pointer
-        run: |
-          git config --global user.name "CSK Bot"
-          git config --global user.email "skeleton@ianhub.com"
-
-          # Explicitly fetch latest submodule refs
-          git submodule update --init --recursive
-          cd skeleton
-          git fetch origin
-          git checkout origin/main
-          cd ..
-
-           # Stage the updated submodule pointer
-           git add skeleton
-          if ! git diff --cached --quiet; then
-            git commit -m "🔄 Update core submodule pointer"
-            git push
-          else
-            echo "✅ Core submodule already up to date"
-          fi
+        uses: ianhub/github-actions/update-submodule@main
+        with:
+          path: skeleton
+          branch: main
