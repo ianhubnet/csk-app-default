@@ -19,5 +19,5 @@ jobs:
       - name: Update common submodule pointer
         uses: ianhubnet/github-actions/update-submodule@main
         with:
-          path: skeleton
-          branch: content/common
+          path: content/common
+          branch: main
