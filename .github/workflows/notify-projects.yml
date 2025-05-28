@@ -25,7 +25,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Notify csk-projects repo about project update
+      - name: Compute metadata
+        id: meta
+        run: |
+          echo "name=${GITHUB_REPOSITORY##*/}" >> $GITHUB_OUTPUT
+
+      - name: Trigger update on csk-projects
         uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.CSK_PAT }}
@@ -34,6 +39,6 @@ jobs:
           client-payload: |
             {
               "repo": "${{ github.repository }}",
-              "name": "${{ github.repository_name }}",
+              "name": "${{ steps.meta.outputs.name }}",
               "strip": "${{ vars.CSK_STRIP }}"
             }
