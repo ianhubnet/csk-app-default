@@ -17,7 +17,7 @@ jobs:
           fetch-depth: 0
 
       - name: Update core submodule pointer
-        uses: ianhub/github-actions/update-submodule@main
+        uses: ianhubnet/github-actions/update-submodule@main
         with:
           path: skeleton
           branch: main
