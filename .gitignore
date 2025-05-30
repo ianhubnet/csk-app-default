@@ -1,39 +1,20 @@
-# Ignore files inside _dev folder(s).
+# Ignore files inside _dev folder(s)
 _dev
 *_dev.*
 
-# Ignore unnecessary folders.
-.DS_Store
+# Ignore unnecessary folders
+**/.DS_Store
 .phpintel
 
-# Ignore backup files.
-!/application/backups/*
-/application/backups/*/*
+# ====== APPLICATION ====== #
 
-# Ignore cache files.
-!/application/cache/*
-/application/cache/*/*
-/application/cache/seo_*
-/application/cache/error_*
-/application/cache/*.lock
-/application/cache/*.json
-!/skeleton/cache/sessions/
+# Ignore all backup files
+/application/backups/*
 
-# Ignore some files files.
-# application/**/*
-/application/controllers/*
-/application/core/*
-/application/helpers/*
-/application/hooks/*
-/application/logs/*
-/application/migrations/*
-/application/models/*
-/application/modules/*
-/application/third_party/*
-/application/views/*
-!/application/**/.gitkeep
+# Ignore all cache files
+/application/cache/*
 
-# Remove generated php file.
+# Ignore some config files
 /application/config/base_controller.php
 /application/config/*/base_controller.php
 /application/config/config.php
@@ -46,52 +27,57 @@ _dev
 /application/config/language.php
 /application/config/blocked_ips.txt
 
-# Content: cache folder.
-!/content/cache/*
+# Ignore Welcome controller
+/application/controllers/Welcome.php
+
+# Ignore all log files
+/application/logs/*
+
+# Ignore all modules
+# See: ianhubnet/csk-packages/tree/main/packages/modules
+/application/modules/*
+
+# Ignore welcome view
+/application/views/welcome.php
+
+# ====== CONTENT ====== #
+
+# Ignore all cache files
 /content/cache/*
-!/content/cache/index.html
 
-# Content: captcha folder.
-!/content/captcha/*
+# Ignore all captcha files
 /content/captcha/*
-!/content/captcha/index.html
 
-# Ignore all uploaded files.
-!/content/uploads/*
-/content/uploads/*
-!/content/uploads/index.html
+# Ignore all common assets
+# See: ianhubnet/csk-common
+/content/common/*
 
-# Ignore all public modules except default ones.
-# Think of removing or commenting the following lines
-# if you want your plugins to be pushed to your repo.
-!/content/modules/*
+# Ignore all modules
+# See: ianhubnet/csk-packages/tree/main/packages/modules
 /content/modules/*
-!/content/modules/index.html
-!/content/modules/dummy
 
-# Ignore all plugins except default ones.
-# Think of removing or commenting the following lines
-# if you want your plugins to be pushed to your repo.
-!/content/plugins/*
-/content/plugins/*
-!/content/plugins/index.html
-
-# Ignore all themes except the default one.
-# Think of removing or commenting the following lines
-# if you want your themes to be pushed to your repo.
-!/content/themes/*
+# Ignore all themes
+# See: ianhubnet/csk-packages/tree/main/packages/themes
 /content/themes/*
-!/content/themes/index.html
-!/content/themes/default
+
+# Ignore all uploaded files
+/content/uploads/*
+
+# Ignore `skeleton`, CSK core folder
+# See: ianhubnet/csk-core
+/skeleton/*
 
 # Sublime Text cache files
-*.tmlanguage.cache
-*.tmPreferences.cache
+*~
+*.bak
+*.bak.*
+*_bak*.*
 *.stTheme.cache
 *.sublime-*
-*_bak*.*
 *.sublime-project
 *.sublime-workspace
+*.tmPreferences.cache
+*.tmlanguage.cache
 
 # keep all .htaccess, .gitkeep and index.html
 !**/.htaccess
