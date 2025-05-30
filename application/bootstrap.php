@@ -2,11 +2,10 @@
 defined('BASEPATH') OR die;
 
 /**
- * CI Skeleton Application version and client key.
+ * CI Skeleton Application version.
  * @since 	2.145
  */
-const CLIENT_VER = '0.1';
-const CLIENT_KEY = 'client-key';
+const APP_VERSION = '0.1';
 
 /*
 |--------------------------------------------------------------------------
