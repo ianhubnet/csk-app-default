@@ -1,0 +1,72 @@
+# ────────────── Basic Information ──────────────
+name: Default App
+slug: default
+type: boilerplate          # Options: app, module, theme, boilerplate, library
+status: active             # Options: active, in-development, beta, paused, archived
+visibility: private        # Options: public, private
+created: 2023-06-01
+updated: 2025-05-31
+version: 0.1
+
+# ────────────── Description and Tags ──────────────
+tags: [csk, codeigniter, boilerplate, starter, template, ianhub]
+
+description: >
+  The default CSK starter application. Used as a base for building new CodeIgniter Skeleton (CSK) projects.
+
+long_description: >
+  This is the official boilerplate application for CSK. It includes a minimal working setup with
+  `/application`, `/content`, and the `/skeleton` submodule pointing to CSK core. This is meant to be cloned
+  or forked to begin new projects, replacing the name, configuration, and extending as needed with themes or modules.
+
+# ────────────── Technical Stack ──────────────
+technologies: [PHP, HTML, JS, CSS, MySQL]
+platforms: [GitHub, Self-hosted]
+
+# ────────────── Project URLs ──────────────
+repo: https://github.com/ianhubnet/csk-app-default
+website: https://www.ianhub.net/
+demo: https://demos.ianhub.net/skeleton/
+
+# ────────────── Preview Images ──────────────
+preview:
+  small: https://i.postimg.cc/k6KtTPh5/skeleton-admin-login-03.png
+  large: https://i.postimg.cc/HxP4spwb/skeleton-admin-login-03.png
+  screenshots:
+    - https://i.postimg.cc/HxP4spwb/skeleton-admin-login-03.png
+    - https://i.postimg.cc/WbZ6TchJ/skeleton-admin-index.png
+    - https://i.postimg.cc/3rVCsxJT/skeleton-admin-modules-01.png
+    - https://i.postimg.cc/65ZfYDZz/skeleton-admin-media-01.png
+    - https://i.postimg.cc/fWpv7wVJ/skeleton-admin-media-02.png
+    - https://i.postimg.cc/GtWFGqS2/skeleton-admin-languages-01.png
+
+# ────────────── Authorship ──────────────
+author:
+  name: Kader Bouyakoub
+  email: bkader@ianhub.net
+  url: https://github.com/bkader
+  website: https://www.ianhub.net/
+
+contributors:
+  - name: null
+    url: null
+
+# ────────────── Dependencies ──────────────
+dependencies:
+  - name: CI Skeleton Core
+    url: https://github.com/ianhubnet/csk-core
+  - name: CI Shared Assets
+    url: https://github.com/ianhubnet/csk-common
+  - name: Default Theme
+    url: https://github.com/ianhubnet/csk-theme-default
+
+# ────────────── License ──────────────
+license:
+  name: Proprietary
+  link: https://www.ianhub.net/license/app
+
+# ────────────── Features / Capabilities ──────────────
+features:
+  - Multi-language support
+  - Modular architecture
+  - Admin dashboard
