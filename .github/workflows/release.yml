@@ -43,6 +43,7 @@ jobs:
                     --exclude='.editorconfig' \
                     --exclude='.gitmodules' \
                     --exclude='CITATION.cff' \
+                    --exclude='project.yml' \
                     --exclude='*.todolist' \
                     --exclude="${{ steps.vars.outputs.name }}" \
                     ./ "${{ steps.vars.outputs.name }}"
