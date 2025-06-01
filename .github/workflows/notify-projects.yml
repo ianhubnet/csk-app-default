@@ -18,6 +18,7 @@ on:
       - '.gitattributes'
       - '.editorconfig'
       - 'CITATION.cff'
+      - 'project.yml'
       - '*.todolist'
 
 jobs:
