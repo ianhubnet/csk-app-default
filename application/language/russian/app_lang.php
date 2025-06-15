@@ -8,7 +8,7 @@
  * @copyright   Copyright (c) 2024, Kader Bouyakoub (http://bit.ly/KaderGhb)
  * @link        http://bit.ly/KaderGhb
  */
-defined('BASEPATH') OR die;
+defined('BASEPATH') || exit('A moment of silence for your attempt.');
 
 /**
  * app_lang
