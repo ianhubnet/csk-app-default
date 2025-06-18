@@ -25,7 +25,6 @@ _dev
 /application/config/*/trusted_hosts.php
 /application/config/*/language.php
 /application/config/language.php
-/application/config/blocked_ips.txt
 
 # Ignore Welcome controller
 /application/controllers/Welcome.php
