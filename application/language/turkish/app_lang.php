@@ -34,7 +34,7 @@ $lang['welcome_footer'] = 'Sayfa <strong>{elapsed_time}</strong>&nbsp;saniyede o
  * Translated Site Info.
  * @since 2.25
  */
-$lang['config:site_name']        = KB_LABEL;
+$lang['config:site_name']        = APP_LABEL;
 $lang['config:site_description'] = 'Geliştirme Gücü, Yaratma Özgürlüğü';
 $lang['config:site_keywords']    = 'codeigniter, skeleton, cezayir, ianhub, kader';
-$lang['config:site_author']      = KB_AUTHOR;
+$lang['config:site_author']      = APP_AUTHOR;

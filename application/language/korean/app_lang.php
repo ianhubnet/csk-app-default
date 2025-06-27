@@ -34,7 +34,7 @@ $lang['welcome_footer'] = '페이지 생성 시간 <strong>{elapsed_time}</stron
  * Translated Site Info.
  * @since 2.25
  */
-$lang['config:site_name']        = KB_LABEL;
+$lang['config:site_name']        = APP_LABEL;
 $lang['config:site_description'] = '건설하는 힘, 창조하는 자유';
 $lang['config:site_keywords']    = 'codeigniter, skeleton, 알제리, ianhub, kader';
 $lang['config:site_author']      = '카데르 부야쿠브';

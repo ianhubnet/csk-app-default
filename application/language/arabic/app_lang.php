@@ -34,7 +34,7 @@ $lang['welcome_footer'] = 'تم تقديم الصفحة في <strong>{elapsed_ti
  * Translated Site Info.
  * @since 2.25
  */
-$lang['config:site_name']        = 'سي آي سكيلتون'; // KB_LABEL;
+$lang['config:site_name']        = 'سي آي سكيلتون'; // APP_LABEL;
 $lang['config:site_description'] = 'القوة في التطوير، والحرية في الإبداع';
 $lang['config:site_keywords']    = 'كوديجنتر, سكلتون, الجزائر, إيان هوب, kader';
-$lang['config:site_author']      = 'عبدالقادر بويعقوب'; // KB_AUTHOR;
+$lang['config:site_author']      = 'عبدالقادر بويعقوب'; // APP_AUTHOR;

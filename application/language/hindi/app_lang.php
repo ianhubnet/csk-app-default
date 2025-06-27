@@ -34,7 +34,7 @@ $lang['welcome_footer'] = 'पृष्ठ में <strong>{elapsed_time}</str
  * Translated Site Info.
  * @since 2.67
  */
-$lang['config:site_name']        = KB_LABEL;
+$lang['config:site_name']        = APP_LABEL;
 $lang['config:site_description'] = 'शक्ति विकसित करने की, सृजन की स्वतंत्रता';
 $lang['config:site_keywords']    = 'कोडआइग्नाइटर, स्केलेटन, अल्जीरिया, आइयानहब, कादर';
-$lang['config:site_author']      = KB_AUTHOR;
+$lang['config:site_author']      = APP_AUTHOR;

@@ -34,7 +34,7 @@ $lang['welcome_footer'] = 'Страница сгенерирована за <str
  * Translated Site Info.
  * @since 2.51
  */
-$lang['config:site_name']        = 'CI Скелетон'; // KB_LABEL;
+$lang['config:site_name']        = 'CI Скелетон'; // APP_LABEL;
 $lang['config:site_description'] = 'Сила Развивать, Свобода Творить';
 $lang['config:site_keywords']    = 'codeigniter, skeleton, алжир, ianhub, кадер';
-$lang['config:site_author']      = KB_AUTHOR;
+$lang['config:site_author']      = APP_AUTHOR;

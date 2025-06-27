@@ -14,22 +14,22 @@ defined('BASEPATH') || exit('A moment of silence for your attempt.');
 const SHOW_DEBUG_BACKTRACE = true;
 
 /**
- * Site reserved constants.
- * @since   2.0
+ * Route reserved constants.
+ * AR_* = "App Route"
  *
- * KB_ADMIN     URL used to access the dashboard. Default: "admin" for "/admin/".
- * KB_BASE      The default controller to use if none is set in database.
- * KB_LOGIN     It is the route using for the login page.
- * KB_LOGOUT    The logout URL.
- * KB_REGISTER  The route used for the registration page.
- * KB_OFFLINE   The route used for the offline/maintenance page.
+ * APP_ADMIN     URL used to access the dashboard. Default: "admin" for "/admin/".
+ * APP_BASE      The default controller to use if none is set in database.
+ * APP_LOGIN     It is the route using for the login page.
+ * APP_LOGOUT    The logout URL.
+ * APP_REGISTER  The route used for the registration page.
+ * APP_OFFLINE   The route used for the offline/maintenance page.
  */
-const KB_ADMIN    = 'admin';
-const KB_BASE     = 'welcome';
-const KB_LOGIN    = 'login';
-const KB_LOGOUT   = 'logout';
-const KB_REGISTER = 'register';
-const KB_OFFLINE  = 'offline';
+const APP_ADMIN    = 'admin';
+const APP_BASE     = 'welcome';
+const APP_LOGIN    = 'login';
+const APP_LOGOUT   = 'logout';
+const APP_REGISTER = 'register';
+const APP_OFFLINE  = 'offline';
 
 /**
  * Define the level that can access the dashboard/admin panel.
@@ -39,13 +39,13 @@ const KB_OFFLINE  = 'offline';
  *
  * Available roles and their levels are:
  *
- * KB_LEVEL_REGULAR:    1 (Regular)
- * KB_LEVEL_AUTHOR:    10 (Author)
- * KB_LEVEL_EDITOR:    20 (Editor)
- * KB_LEVEL_MANAGER:   30 (Manager)
- * KB_LEVEL_ADMIN:     40 (Admin)
- * KB_LEVEL_OWNER:     50 (Owner)
+ * USER_LEVEL_REGULAR:    1 (Regular)
+ * USER_LEVEL_AUTHOR:    10 (Author)
+ * USER_LEVEL_EDITOR:    20 (Editor)
+ * USER_LEVEL_MANAGER:   30 (Manager)
+ * USER_LEVEL_ADMIN:     40 (Admin)
+ * USER_LEVEL_OWNER:     50 (Owner)
  *
  * @since   2.16
  */
-const KB_LEVEL_ACP = KB_LEVEL_AUTHOR;
+const USER_LEVEL_ACP = USER_LEVEL_AUTHOR;

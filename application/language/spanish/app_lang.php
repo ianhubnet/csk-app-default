@@ -34,7 +34,7 @@ $lang['welcome_footer'] = 'Página renderizada en <strong>{elapsed_time}</strong
  * Translated Site Info.
  * @since 2.51
  */
-$lang['config:site_name']        = KB_LABEL;
+$lang['config:site_name']        = APP_LABEL;
 $lang['config:site_description'] = 'El Poder de Desarrollar, La Libertad de Crear';
 $lang['config:site_keywords']    = 'codeigniter, esqueleto, argelia, ianhub, kader';
-$lang['config:site_author']      = KB_AUTHOR;
+$lang['config:site_author']      = APP_AUTHOR;

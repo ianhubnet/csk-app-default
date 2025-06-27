@@ -34,7 +34,7 @@ $lang['welcome_footer'] = 'Pagina generata in <strong>{elapsed_time}</strong>&nb
  * Translated Site Info.
  * @since 2.25
  */
-$lang['config:site_name']        = KB_LABEL;
+$lang['config:site_name']        = APP_LABEL;
 $lang['config:site_description'] = 'Il Potere di Sviluppare, la Libertà di Creare';
-$lang['config:site_keywords']    = KB_KEYWORDS;
-$lang['config:site_author']      = KB_AUTHOR;
+$lang['config:site_keywords']    = APP_KEYWORDS;
+$lang['config:site_author']      = APP_AUTHOR;

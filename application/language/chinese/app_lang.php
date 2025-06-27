@@ -34,7 +34,7 @@ $lang['welcome_footer'] = '页面在 <strong>{elapsed_time}</strong> 秒内呈�
  * Translated Site Info.
  * @since 2.53
  */
-$lang['config:site_name']        = KB_LABEL;
+$lang['config:site_name']        = APP_LABEL;
 $lang['config:site_description'] = '拥有开发的力量，创造的自由';
-$lang['config:site_keywords']    = KB_KEYWORDS;
-$lang['config:site_author']      = KB_AUTHOR;
+$lang['config:site_keywords']    = APP_KEYWORDS;
+$lang['config:site_author']      = APP_AUTHOR;

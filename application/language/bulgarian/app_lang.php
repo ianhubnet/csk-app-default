@@ -34,7 +34,7 @@ $lang['welcome_footer'] = 'Страницата се зареди за <strong>{
  * Translated Site Info.
  * @since 2.25
  */
-$lang['config:site_name']        = KB_LABEL;
-$lang['config:site_description'] = KB_SLOGAN;
+$lang['config:site_name']        = APP_LABEL;
+$lang['config:site_description'] = APP_SLOGAN;
 $lang['config:site_keywords']    = 'codeigniter, skeleton, алжир, ianhub, kader';
-$lang['config:site_author']      = KB_AUTHOR;
+$lang['config:site_author']      = APP_AUTHOR;

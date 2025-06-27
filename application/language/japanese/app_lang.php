@@ -34,7 +34,7 @@ $lang['welcome_footer'] = 'ページの表示にかかった時間：<strong>{el
  * Translated Site Info.
  * @since 2.53
  */
-$lang['config:site_name']        = 'CI スケルトン'; // KB_LABEL;
+$lang['config:site_name']        = 'CI スケルトン'; // APP_LABEL;
 $lang['config:site_description'] = '開発の力、創造する自由';
-$lang['config:site_keywords']    = KB_KEYWORDS;
-$lang['config:site_author']      = KB_AUTHOR;
+$lang['config:site_keywords']    = APP_KEYWORDS;
+$lang['config:site_author']      = APP_AUTHOR;

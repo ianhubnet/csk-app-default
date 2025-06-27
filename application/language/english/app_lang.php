@@ -34,7 +34,7 @@ $lang['welcome_footer'] = 'Page rendered in <strong>{elapsed_time}</strong>&nbsp
  * Translated Site Info.
  * @since 2.25
  */
-$lang['config:site_name']        = KB_LABEL;
-$lang['config:site_description'] = KB_SLOGAN;
-$lang['config:site_keywords']    = KB_KEYWORDS;
-$lang['config:site_author']      = KB_AUTHOR;
+$lang['config:site_name']        = APP_LABEL;
+$lang['config:site_description'] = APP_SLOGAN;
+$lang['config:site_keywords']    = APP_KEYWORDS;
+$lang['config:site_author']      = APP_AUTHOR;

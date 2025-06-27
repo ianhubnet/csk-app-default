@@ -14,18 +14,18 @@ const APP_VERSION = '0.1';
 |
 | Here you can define your application global information.
 |
-|	KB_LABEL:	App name (default: CI Skeleton)
-|	KB_SHORT:	App short name (default: CSK)
-|	KB_SLOGAN:	App default description.
-|	KB_AUTHOR:	App global author name.
-| 	KB_KEYWORDS:	App name (default: combines label and description)
+|	APP_LABEL:	App name (default: CI Skeleton)
+|	APP_SHORT:	App short name (default: CSK)
+|	APP_SLOGAN:	App default description.
+|	APP_AUTHOR:	App global author name.
+| 	APP_KEYWORDS:	App name (default: combines label and description)
 |
 */
-const KB_LABEL      = KPlatform::LABEL;
-const KB_SHORT      = KPlatform::SHORT;
-const KB_SLOGAN     = KPlatform::SLOGAN;
-const KB_AUTHOR     = KPlatform::AUTHOR;
-const KB_KEYWORDS   = KPlatform::KEYWORDS;
+const APP_LABEL      = KPlatform::LABEL;
+const APP_SHORT      = KPlatform::SHORT;
+const APP_SLOGAN     = KPlatform::SLOGAN;
+const APP_AUTHOR     = KPlatform::AUTHOR;
+const APP_KEYWORDS   = KPlatform::KEYWORDS;
 
 /**
  * Because Web Hosting providers set a limit to how my
@@ -44,7 +44,7 @@ const KB_KEYWORDS   = KPlatform::KEYWORDS;
  * The default limit used by KB_Router is 20, if you feel it is too high
  * or too low, please uncomment the line below and set the limit you wish.
  */
-// const KB_REQUEST_LIMIT = 20;
+// const CI_REQUEST_LIMIT = 20;
 
 // --------------------------------------------------------------------
 // YOU MAY EDIT LINES BELOW.

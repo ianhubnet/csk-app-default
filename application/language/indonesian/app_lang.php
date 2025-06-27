@@ -34,9 +34,9 @@ $lang['welcome_footer'] = 'Halaman dirender dalam <strong>{elapsed_time}</strong
  * Translated Site Info.
  * @since 2.25
  */
-$lang['config:site_name']        = KB_LABEL;
+$lang['config:site_name']        = APP_LABEL;
 $lang['config:site_description'] = 'Kekuatan untuk Mengembangkan, Kebebasan untuk Berkarya';
-$lang['config:site_keywords']    = KB_KEYWORDS;
-$lang['config:site_author']      = KB_AUTHOR;
+$lang['config:site_keywords']    = APP_KEYWORDS;
+$lang['config:site_author']      = APP_AUTHOR;
 
 
