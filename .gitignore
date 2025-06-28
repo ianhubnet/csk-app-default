@@ -25,6 +25,7 @@ _dev
 /application/config/*/trusted_hosts.php
 /application/config/*/language.php
 /application/config/language.php
+/application/config/environment
 
 # Ignore Welcome controller
 /application/controllers/Welcome.php
