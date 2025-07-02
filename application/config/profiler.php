@@ -1,14 +1,14 @@
 <?php
 defined('BASEPATH') || exit('A moment of silence for your attempt.');
 
-/*
-| -------------------------------------------------------------------------
-| Profiler Sections
-| -------------------------------------------------------------------------
-| This file lets you determine whether or not various sections of Profiler
-| data are displayed when the Profiler is enabled.
-| Please see the user guide for info:
-|
-|	https://codeigniter.com/userguide3/general/profiling.html
-|
-*/
+/**
+ * Application Profiler Configuration
+ *
+ * This file overrides or extends the core profiler settings from Skeleton.
+ * Use this file to fine-tune what sections are shown during development profiling.
+ *
+ * @package     App\Config
+ * @author      Kader Bouyakoub <bkader[at]mail[dot]com>
+ * @copyright   Copyright (c) 2025, Kader Bouyakoub
+ * @since       1.0
+ */

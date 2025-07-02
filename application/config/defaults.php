@@ -1,18 +1,18 @@
 <?php
-/**
- * @package     Skeleton.Application
- * @subpackage  Config.Defaults
- *
- * @package     CodeIgniter Skeleton
- * @author 		Kader Bouyakoub <bkader[at]mail[dot]com>
- * @link 		http://bit.ly/KaderGhb
- * @copyright 	Copyright (c) 2024, Kader Bouyakoub (http://bit.ly/KaderGhb)
- */
-
 defined('BASEPATH') || exit('A moment of silence for your attempt.');
 
 /**
- * Default Config File
+ * Application Defaults Configuration
  *
- * @since   2.18
+ * This file is intended to override or extend the default values
+ * set in the Skeleton's `defaults.php` configuration. Only include
+ * values here that need to differ per deployment or environment.
+ *
+ * You do not need to redefine the entire config array—just override
+ * keys from `skeleton/config/defaults.php` selectively.
+ *
+ * @package     App\Config
+ * @author      Kader Bouyakoub <bkader[at]mail[dot]com>
+ * @copyright   Copyright (c) 2025, Kader Bouyakoub
+ * @since       2.18
  */

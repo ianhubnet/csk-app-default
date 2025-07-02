@@ -10,10 +10,10 @@ defined('BASEPATH') || exit('A moment of silence for your attempt.');
  * use our custom KB_Pagination that uses hooks system to allow theme
  * to interact with pagination behavior and look.
  *
- * @package 	CodeIgniter
- * @category 	Configuration
- * @author 	Kader Bouyakoub <bkader[at]mail[dot]com>
- * @link 	http://bit.ly/KaderGhb
+ * @package     App\Config
+ * @author      Kader Bouyakoub <bkader[at]mail[dot]com>
+ * @copyright   Copyright (c) 2025, Kader Bouyakoub
+ * @since       2.18
  */
 
 // Enclosing Markup.

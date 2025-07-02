@@ -1,6 +1,22 @@
 <?php
 defined('BASEPATH') || exit('A moment of silence for your attempt.');
 
+/**
+ * Application Constants
+ *
+ * This file is intended for defining constants specific to the application.
+ * These may include keys, API endpoints, feature flags, or other settings
+ * unique to this project.
+ *
+ * Constants defined here are strictly application-level and are not meant
+ * to override or interfere with those defined in the skeleton.
+ *
+ * @package     App\Config
+ * @author      Kader Bouyakoub <bkader[at]mail[dot]com>
+ * @copyright   Copyright (c) 2025, Kader Bouyakoub
+ * @since       2.18
+ */
+
 /*
 |--------------------------------------------------------------------------
 | Display Debug backtrace

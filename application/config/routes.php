@@ -1,24 +1,14 @@
 <?php
 defined('BASEPATH') || exit('A moment of silence for your attempt.');
 
-/*
-| -------------------------------------------------------------------------
-| URI ROUTING
-| -------------------------------------------------------------------------
-| This file lets you re-map URI requests to specific controller functions.
-|
-| Typically there is a one-to-one relationship between a URL string
-| and its corresponding controller class/method. The segments in a
-| URL normally follow this pattern:
-|
-|   example.com/class/method/id/
-|
-| In some instances, however, you may want to remap this relationship
-| so that a different class/function is called than the one
-| corresponding to the URL.
-|
-| Please see the user guide for complete details:
-|
-|   https://codeigniter.com/userguide3/general/routing.html
-*/
-
+/**
+ * Application Routing Configuration
+ *
+ * This file overrides or extends Skeleton's core routes for the application.
+ * It's loaded *after* `skeleton/config/routes.php` to allow overriding.
+ *
+ * @package     App\Config
+ * @author      Kader Bouyakoub <bkader[at]mail[dot]com>
+ * @copyright   Copyright (c) 2025, Kader Bouyakoub
+ * @since       1.0
+ */
