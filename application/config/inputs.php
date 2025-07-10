@@ -1,5 +1,4 @@
 <?php
-defined('BASEPATH') || exit('A moment of silence for your attempt.');
 
 /**
  * Application Form Inputs Override
@@ -12,8 +11,8 @@ defined('BASEPATH') || exit('A moment of silence for your attempt.');
  * Then in your view:
  *     echo print_input($username, ['class' => 'form-control']);
  *
- * @package     App\Config
- * @author      Kader Bouyakoub <bkader[at]mail[dot]com>
- * @copyright   Copyright (c) 2025, Kader Bouyakoub
- * @since       1.33
+ * @package    App\Config
+ * @author     Kader Bouyakoub <bkader[at]mail[dot]com>
+ * @copyright  Copyright (c) 2025, Kader Bouyakoub
+ * @since      1.33
  */

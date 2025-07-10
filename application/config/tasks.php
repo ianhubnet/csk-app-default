@@ -1,5 +1,4 @@
 <?php
-defined('BASEPATH') || exit('A moment of silence for your attempt.');
 
 /**
  * Cron Tasks
@@ -32,8 +31,8 @@ defined('BASEPATH') || exit('A moment of silence for your attempt.');
  * "config/tasks.php" file. CI Skeleton merges both config files and tasks
  * that already exist in the database will not be overridden.
  *
- * @package     App\Config
- * @author      Kader Bouyakoub <bkader[at]mail[dot]com>
- * @copyright   Copyright (c) 2025, Kader Bouyakoub
- * @since       2.156
+ * @package    App\Config
+ * @author     Kader Bouyakoub <bkader[at]mail[dot]com>
+ * @copyright  Copyright (c) 2025, Kader Bouyakoub
+ * @since      2.156
  */

@@ -1,5 +1,4 @@
 <?php
-defined('BASEPATH') || exit('A moment of silence for your attempt.');
 
 /*
 | -------------------------------------------------------------------------
@@ -10,10 +9,11 @@ defined('BASEPATH') || exit('A moment of silence for your attempt.');
 |	See: https://codeigniter.com/userguide3/libraries/caching.html#memcached
 |
 */
-$config = array(
-	'default' => array(
+
+$config = [
+	'default' => [
 		'hostname' => '127.0.0.1',
 		'port'     => '11211',
 		'weight'   => '1',
-	),
-);
+	],
+];

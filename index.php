@@ -1,4 +1,5 @@
 <?php
+
 /**
  *---------------------------------------------------------------
  * CodeIgniter Skeleton Front Controller
@@ -34,15 +35,14 @@ define('DS', DIRECTORY_SEPARATOR);
  * - Configures PHP error reporting
  * - Ensures compatibility with CLI and web server
  */
-(static function(): void {
+(static function (): void {
 
 	/**
 	 * Normalize working directory for CLI.
 	 *
 	 * Ensures relative paths behave as expected.
 	 */
-	if (PHP_SAPI === 'cli' || defined('STDIN'))
-	{
+	if (PHP_SAPI === 'cli' || defined('STDIN')) {
 		chdir(dirname(__FILE__));
 	}
 
@@ -65,11 +65,15 @@ define('DS', DIRECTORY_SEPARATOR);
 	 */
 	$resolve = static function (string $path, string $name = ''): string {
 		// Try resolving to absolute path
-		if (($real = realpath($path)) !== false) return $real;
+		if (($real = realpath($path)) !== false) {
+			return $real;
+		}
 
 		// Normalize slashes and check directory existence manually
 		$real = rtrim(str_replace(['/', '\\'], DS, $path), DS);
-		if (is_dir($real)) return $real;
+		if (is_dir($real)) {
+			return $real;
+		}
 
 		// Build a meaningful error message
 		$name  = empty($name) ? basename($path) : $name;
@@ -118,11 +122,9 @@ define('DS', DIRECTORY_SEPARATOR);
 
 	if ($views === '' && is_dir(APPPATH.'views')) {
 		define('VIEWPATH', APPPATH.'views'.DS);
-	}
-	elseif ($views && is_dir($views)) {
+	} elseif ($views && is_dir($views)) {
 		define('VIEWPATH', $resolve($views, 'views').DS);
-	}
-	else {
+	} else {
 		$msg = sprintf('Your views folder is invalid. Please fix "%s".', SELF);
 		if (PHP_SAPI === 'cli' || defined('STDIN')) {
 			fwrite(STDERR, $msg . PHP_EOL);
@@ -148,11 +150,10 @@ define('DS', DIRECTORY_SEPARATOR);
 	 * Default to "development" if file does not exist.
 	 * Also create the file with the default value.
 	 */
-	if ( ! is_file($envfile)) {
+	if (!is_file($envfile)) {
 		$environment = 'development';
 		file_put_contents($envfile, $environment, LOCK_EX);
-	}
-	else {
+	} else {
 		$environment = trim(file_get_contents($envfile));
 	}
 
@@ -160,7 +161,7 @@ define('DS', DIRECTORY_SEPARATOR);
 	 * Fallback if file contents are invalid.
 	 * Only the three official environments are allowed.
 	 */
-	if ( ! in_array($environment, array('development', 'testing', 'production'), true)) {
+	if (!in_array($environment, array('development', 'testing', 'production'), true)) {
 		$environment = 'development';
 		file_put_contents($envfile, $environment, LOCK_EX);
 	}
@@ -175,18 +176,17 @@ define('DS', DIRECTORY_SEPARATOR);
 	 *
 	 * You may customize this if you add more environments.
 	 */
-	switch (ENVIRONMENT)
-	{
+	switch (ENVIRONMENT) {
 		case 'development':
 			error_reporting(-1);               // Show all errors
 			ini_set('display_errors', '1');    // Display them to browser
-		break;
+			break;
 
 		case 'testing':
 		case 'production':
 			error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT & ~E_USER_NOTICE & ~E_USER_DEPRECATED);
 			ini_set('display_errors', '0');   // Do not display to browser
-		break;
+			break;
 
 		default:
 			// This should never happen because we validated earlier

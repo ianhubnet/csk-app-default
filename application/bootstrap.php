@@ -1,9 +1,8 @@
 <?php
-defined('BASEPATH') || exit('A moment of silence for your attempt.');
 
 /**
  * CI Skeleton Application version.
- * @since 	2.145
+ * @since 2.145
  */
 const APP_VERSION = '0.1';
 
@@ -52,10 +51,10 @@ const APP_KEYWORDS   = KPlatform::KEYWORDS;
 
 // Application classes.
 // Autoloader::add_classes(array(
-	/**
-	 * Add classes you want to add/override here.
-	 * @example: 'Classname' => APPPATH.'libraries/Classname.php'
-	 */
+/**
+ * Add classes you want to add/override here.
+ * @example: 'Classname' => APPPATH.'libraries/Classname.php'
+ */
 // ));
 
 /**
@@ -68,7 +67,7 @@ const APP_KEYWORDS   = KPlatform::KEYWORDS;
 
 /**
  * This action is fired before Skeleton libraries are loaded.
- * @since 	2.13
+ * @since 2.13
  */
 // add_action('init', function() {
 // 	// Do your magic.
@@ -81,7 +80,7 @@ const APP_KEYWORDS   = KPlatform::KEYWORDS;
 /**
  * In case you want to add more details to modules headers, please
  * use the action below.
- * @since 	2.12
+ * @since 2.12
  */
 // add_action('modules_headers', function($headers) {
 // 	return $headers;

@@ -1,13 +1,12 @@
 <?php
-defined('BASEPATH') || exit('A moment of silence for your attempt.');
 
 /**
  * Table library configuration.
  *
- * @package     App\Config
- * @author      Kader Bouyakoub <bkader[at]mail[dot]com>
- * @copyright   Copyright (c) 2025, Kader Bouyakoub
- * @since       1.33
+ * @package    App\Config
+ * @author     Kader Bouyakoub <bkader[at]mail[dot]com>
+ * @copyright  Copyright (c) 2025, Kader Bouyakoub
+ * @since      1.33
  */
 
 // Table open and close tags.

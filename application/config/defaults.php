@@ -1,5 +1,4 @@
 <?php
-defined('BASEPATH') || exit('A moment of silence for your attempt.');
 
 /**
  * Application Defaults Configuration
@@ -11,8 +10,8 @@ defined('BASEPATH') || exit('A moment of silence for your attempt.');
  * You do not need to redefine the entire config array—just override
  * keys from `skeleton/config/defaults.php` selectively.
  *
- * @package     App\Config
- * @author      Kader Bouyakoub <bkader[at]mail[dot]com>
- * @copyright   Copyright (c) 2025, Kader Bouyakoub
- * @since       2.18
+ * @package    App\Config
+ * @author     Kader Bouyakoub <bkader[at]mail[dot]com>
+ * @copyright  Copyright (c) 2025, Kader Bouyakoub
+ * @since      2.18
  */
