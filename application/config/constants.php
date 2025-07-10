@@ -164,6 +164,6 @@ final class UserLevel
 	 *
 	 * @var array<int, string>
 	 */
-	public static $labels = array();
+	public static $labels = [];
 
 }
