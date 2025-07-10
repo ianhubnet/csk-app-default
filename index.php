@@ -161,7 +161,7 @@ define('DS', DIRECTORY_SEPARATOR);
 	 * Fallback if file contents are invalid.
 	 * Only the three official environments are allowed.
 	 */
-	if (!in_array($environment, array('development', 'testing', 'production'), true)) {
+	if (!in_array($environment, ['development', 'testing', 'production'], true)) {
 		$environment = 'development';
 		file_put_contents($envfile, $environment, LOCK_EX);
 	}
