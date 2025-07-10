@@ -1,4 +1,5 @@
 <?php
+
 defined('BASEPATH') || exit('A moment of silence for your attempt.');
 
 /**
@@ -35,10 +36,10 @@ const SHOW_DEBUG_BACKTRACE = true;
  *
  * APP_ADMIN     URL used to access the dashboard. Default: "admin" for "/admin/".
  * APP_BASE      The default controller to use if none is set in database.
- * APP_LOGIN     It is the route using for the login page.
- * APP_LOGOUT    The logout URL.
- * APP_REGISTER  The route used for the registration page.
- * APP_OFFLINE   The route used for the offline/maintenance page.
+ * APP_LOGIN     Route used for the login page.
+ * APP_LOGOUT    Route used to log users out.
+ * APP_REGISTER  Route used for the registration page.
+ * APP_OFFLINE   Route used when the site is in maintenance/offline mode.
  */
 const APP_ADMIN    = 'admin';
 const APP_BASE     = 'welcome';
@@ -145,6 +146,14 @@ final class UserLevel
 	 * @var int
 	 */
 	public const ACP = self::AUTHOR;
+
+	/**
+	 * Minimum level required to bypass demo mode restrictions.
+	 * Change this to control which users retain full access in demo mode.
+	 *
+	 * @var int
+	 */
+	public const DEMO = self::OWNER;
 
 	/**
 	 * These are merged with AccessLevel::$labels when generating levels.
