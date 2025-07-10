@@ -88,6 +88,16 @@
 </IfModule>
 
 # ----------------------------------------------------------------------
+# Inform proxies/CDNs that the response varies based on encoding
+# ----------------------------------------------------------------------
+<IfModule mod_headers.c>
+	<FilesMatch "\.(js|css|xml|gz|svg|ttf|otf|eot|woff|woff2)$">
+		# Add Vary: Accept-Encoding for better caching and compression handling
+		Header append Vary: Accept-Encoding
+	</FilesMatch>
+</IfModule>
+
+# ----------------------------------------------------------------------
 # UTF-8 Encoding
 # ----------------------------------------------------------------------
 AddDefaultCharset utf-8
@@ -175,15 +185,26 @@ AddDefaultCharset utf-8
 <IfModule mod_expires.c>
 	ExpiresActive On
 	ExpiresByType application/javascript "access 1 month"
+
+	# JavaScript and CSS: cache for 1 month
 	ExpiresByType text/css "access 1 month"
+
+	# HTML documents: cache for 2 days (so users still get updated content reasonably fast)
 	ExpiresByType text/html "access 2 days"
+
+	# Images: cache for 1 year (rarely change)
 	ExpiresByType image/gif "access 1 year"
 	ExpiresByType image/jpeg "access 1 year"
 	ExpiresByType image/png "access 1 year"
 	ExpiresByType image/svg+xml "access 1 year"
+	ExpiresByType image/webp "access plus 1 year"
+
+	# Fonts: cache for 1 year
 	ExpiresByType font/ttf "access 1 year"
 	ExpiresByType font/woff "access 1 year"
 	ExpiresByType font/woff2 "access 1 year"
 	ExpiresByType application/font-woff "access 1 year"
+
+	# Fallback to all other files
 	ExpiresDefault "access 2 days"
 </IfModule>
