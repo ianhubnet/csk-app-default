@@ -18,18 +18,6 @@ defined('BASEPATH') || exit('A moment of silence for your attempt.');
  * @since       2.18
  */
 
-/*
-|--------------------------------------------------------------------------
-| Display Debug backtrace
-|--------------------------------------------------------------------------
-|
-| If set to true, a backtrace will be displayed along with php errors. If
-| error_reporting is disabled, the backtrace will not display, regardless
-| of this setting
-|
-*/
-const SHOW_DEBUG_BACKTRACE = true;
-
 /**
  * Route reserved constants.
  * AR_* = "App Route"
@@ -153,7 +141,7 @@ final class UserLevel
 	 *
 	 * @var int
 	 */
-	public const DEMO = self::OWNER;
+	public const DEMO = self::OWNER + 10;
 
 	/**
 	 * These are merged with AccessLevel::$labels when generating levels.

@@ -20,11 +20,11 @@ const APP_VERSION = '0.1';
 | 	APP_KEYWORDS:	App name (default: combines label and description)
 |
 */
-const APP_LABEL      = KPlatform::LABEL;
-const APP_SHORT      = KPlatform::SHORT;
-const APP_SLOGAN     = KPlatform::SLOGAN;
-const APP_AUTHOR     = KPlatform::AUTHOR;
-const APP_KEYWORDS   = KPlatform::KEYWORDS;
+const APP_LABEL      = Platform::LABEL;
+const APP_SHORT      = Platform::SHORT;
+const APP_SLOGAN     = Platform::SLOGAN;
+const APP_AUTHOR     = Platform::AUTHOR;
+const APP_KEYWORDS   = Platform::KEYWORDS;
 
 /**
  * Because Web Hosting providers set a limit to how my

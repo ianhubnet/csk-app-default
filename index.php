@@ -98,42 +98,14 @@ define('DS', DIRECTORY_SEPARATOR);
 	// Path to this front controller (index.php)
 	define('FCPATH', __DIR__.DS);
 
-	// Path to CSK's skeleton folder
-	define('KBPATH', $resolve('skeleton', 'skeleton').DS);
-
-	// Path to CodeIgniter system folder
-	define('BASEPATH', $resolve('skeleton/system', 'system').DS);
+	// Path to CI Skeleton system folder
+	define('BASEPATH', $resolve('skeleton', 'system').DS);
 
 	// Path to the application folder
 	define('APPPATH', $resolve('application', 'application').DS);
 
 	// The name of the "system" folder (used internally)
 	define('SYSDIR', basename(BASEPATH));
-
-	/**
-	 * Resolve and define VIEWPATH.
-	 *
-	 * Priority:
-	 * 1. If `$views` is empty and `application/views` exists.
-	 * 2. If `$views` is a valid custom path.
-	 * 3. Fail with detailed error.
-	 */
-	$views = ''; // Leave blank to auto-detect `application/views`.
-
-	if ($views === '' && is_dir(APPPATH.'views')) {
-		define('VIEWPATH', APPPATH.'views'.DS);
-	} elseif ($views && is_dir($views)) {
-		define('VIEWPATH', $resolve($views, 'views').DS);
-	} else {
-		$msg = sprintf('Your views folder is invalid. Please fix "%s".', SELF);
-		if (PHP_SAPI === 'cli' || defined('STDIN')) {
-			fwrite(STDERR, $msg . PHP_EOL);
-		} else {
-			header('HTTP/1.1 503 Service Unavailable.', true, 503);
-			echo $msg;
-		}
-		exit(3); // EXIT_CONFIG
-	}
 
 	// --------------------------------------------------------------------
 	// ENVIRONMENT SETUP
@@ -178,14 +150,22 @@ define('DS', DIRECTORY_SEPARATOR);
 	 */
 	switch (ENVIRONMENT) {
 		case 'development':
-			error_reporting(-1);               // Show all errors
-			ini_set('display_errors', '1');    // Display them to browser
-			break;
-
 		case 'testing':
+			// In development/testing, we want to show as many errors as possible
+			// to helper make sure they don't make it to production. And save
+			// us hours of painful debugging.
+			error_reporting(E_ALL);
+			ini_set('display_errors', '1');
+			define('SHOW_DEBUG_BACKTRACE', true);
+			define('CI_DEBUG', true);
+			break;
 		case 'production':
-			error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT & ~E_USER_NOTICE & ~E_USER_DEPRECATED);
-			ini_set('display_errors', '0');   // Do not display to browser
+			// Don't show any errors in production environment. Instead, let the
+			// system catch it and display a generic error message.
+			error_reporting(E_ALL & ~E_DEPRECATED);
+			ini_set('display_errors', '0');
+			define('SHOW_DEBUG_BACKTRACE', false);
+			define('CI_DEBUG', false);
 			break;
 
 		default:
@@ -203,4 +183,4 @@ define('DS', DIRECTORY_SEPARATOR);
  * This file initializes autoloaders, core services, and
  * kicks off CodeIgniter Skeleton.
  */
-require(KBPATH.'bootstrap.php');
+require_once BASEPATH.'bootstrap.php';

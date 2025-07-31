@@ -5,7 +5,7 @@
  *
  * This file allows you to register scheduled tasks that the system will
  * manage and run at defined intervals. These tasks are loaded by the
- * "Kbcore_tasks" driver and executed based on their recurrence and state.
+ * "Hub_tasks" driver and executed based on their recurrence and state.
  *
  * Each task must be defined under the `$config['tasks']` array using a
  * unique alias as the key, and an associative array of options:

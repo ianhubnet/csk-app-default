@@ -3,24 +3,25 @@
 /**
  * Auto-loader
  *
- * This file specifies which systems should be loaded by default.
+ * This file specifies which components should be automatically loaded
+ * with every request. It supports both:
  *
- * In order to keep the framework as light-weight as possible only the
- * absolute minimal resources are loaded by default. For example,
- * the database is not connected to automatically since no assumption
- * is made regarding whether you intend to use it.  This file lets
- * you globally define which systems you would like loaded with every
- * request.
+ *  1. `$autoload` - Items loaded early in the request lifecycle.
+ *  2. `$deferred` - Items loaded later, when the "post_loader" hook
+ *     is triggered manually via `do_action('post_loader')`.
  *
- * These are the things you can load automatically:
+ * You can autoload the following components:
  *
- * 1. Packages
- * 2. Libraries
- * 3. Drivers
- * 4. Helper files
- * 5. Custom config files
- * 6. Language files
- * 7. Models
+ *   - packages  : Array of package paths.
+ *   - libraries : Array of library names.
+ *   - drivers   : Array of drivers (optionally aliased).
+ *   - helper    : Array of helper files.
+ *   - config    : Array of custom config files.
+ *   - language  : Array of language files (better use `$deferred` for them).
+ *   - model     : Array of models.
+ *
+ * NOTE: Language files should generally go in `$deferred` to ensure
+ * that locale/theme-dependent context is available when loading them.
  *
  * @package    App\Config
  * @author     Kader Bouyakoub <bkader[at]mail[dot]com>

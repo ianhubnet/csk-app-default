@@ -8,11 +8,8 @@ _dev
 
 # ====== APPLICATION ====== #
 
-# Ignore all backup files
-/application/backups/*
-
 # Ignore all cache files
-/application/cache/*
+/application/storage/*
 
 # Ignore some config files
 /application/config/base_controller.php
