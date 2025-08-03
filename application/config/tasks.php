@@ -28,7 +28,7 @@
  * - meta       : Optional. Arbitrary metadata to store with the task.
  *
  * You can override core tasks or register your own inside your app's
- * "config/tasks.php" file. CI Skeleton merges both config files and tasks
+ * "config/tasks.php" file. CiSkeleton merges both config files and tasks
  * that already exist in the database will not be overridden.
  *
  * @package    App\Config

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * CI Skeleton Application version.
+ * CiSkeleton Application version.
  * @since 2.145
  */
 const APP_VERSION = '0.1';

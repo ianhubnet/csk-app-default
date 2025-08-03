@@ -2,16 +2,17 @@
 
 /**
  *---------------------------------------------------------------
- * CodeIgniter Skeleton Front Controller
+ * CiSkeleton Front Controller
  *---------------------------------------------------------------
  *
  * This is the entry point for all HTTP and CLI requests.
  * It resolves core paths, defines environment settings,
  * sets up error reporting, and loads the application bootstrap.
  *
- * @package     CodeIgniter Skeleton (CSK)
- * @author      Abdelkader Bouyakoub
- * @link        https://github.com/bkader/skeleton
+ * @package    CiSkeleton
+ * @author     Kader Bouyakoub <bkader[at]mail[dot]com>
+ * @copyright  Copyright (c) 2025, Kader Bouyakoub
+ * @link       https://github.com/bkader/skeleton
  */
 
 ob_start(); // Start output buffering to ensure headers can be sent later.
@@ -92,13 +93,13 @@ define('DS', DIRECTORY_SEPARATOR);
 	/**
 	 * Define base constants used by the system.
 	 *
-	 * These are required by the CodeIgniter core.
+	 * These are required by the CiSkeleton core.
 	 */
 
 	// Path to this front controller (index.php)
 	define('FCPATH', __DIR__.DS);
 
-	// Path to CI Skeleton system folder
+	// Path to CiSkeleton system folder
 	define('BASEPATH', $resolve('skeleton', 'system').DS);
 
 	// Path to the application folder
@@ -180,7 +181,7 @@ define('DS', DIRECTORY_SEPARATOR);
 /**
  * Finally, load the application bootstrap.
  *
- * This file initializes autoloaders, core services, and
- * kicks off CodeIgniter Skeleton.
+ * This file initializes autoloaders, core services,
+ * and kicks off CiSkeleton.
  */
 require_once BASEPATH.'bootstrap.php';

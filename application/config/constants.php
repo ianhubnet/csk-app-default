@@ -44,7 +44,7 @@ const APP_OFFLINE  = 'offline';
  * Application-specific access levels based on the core system's AccessLevel.
  *
  * This class is meant to be edited freely within the application to customize
- * or extend the default levels defined by CI Skeleton. All role-based access
+ * or extend the default levels defined by CiSkeleton. All role-based access
  * checks should use this class instead of hard-coding numeric values.
  *
  * You can also define new constants (e.g., ACP, SUPPORT, etc) that refer to any
@@ -83,7 +83,7 @@ const APP_OFFLINE  = 'offline';
 final class UserLevel
 {
 	// --------------------------------------------------------------------
-	// CI Skeleton default levels (DO NOT MODIFY)
+	// CiSkeleton default levels
 	// --------------------------------------------------------------------
 
 	/**
