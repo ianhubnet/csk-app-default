@@ -82,7 +82,7 @@ define('DS', DIRECTORY_SEPARATOR);
 
 		// CLI vs. Web error display
 		if (PHP_SAPI === 'cli' || defined('STDIN')) {
-			fwrite(STDERR, $error . PHP_EOL);
+			fwrite(STDERR, $error.PHP_EOL);
 		} else {
 			header('HTTP/1.1 503 Service Unavailable.', true, 503);
 			echo $error;
@@ -152,19 +152,31 @@ define('DS', DIRECTORY_SEPARATOR);
 	switch (ENVIRONMENT) {
 		case 'development':
 		case 'testing':
-			// In development/testing, we want to show as many errors as possible
-			// to helper make sure they don't make it to production. And save
-			// us hours of painful debugging.
+			// Show all errors, including strict and deprecated
 			error_reporting(E_ALL);
 			ini_set('display_errors', '1');
+			ini_set('log_errors', '1');
+			ini_set('error_log', APPPATH.'storage/logs/php_errors.log');
+
 			define('SHOW_DEBUG_BACKTRACE', true);
 			define('CI_DEBUG', true);
 			break;
+
 		case 'production':
-			// Don't show any errors in production environment. Instead, let the
-			// system catch it and display a generic error message.
-			error_reporting(E_ALL & ~E_DEPRECATED);
-			ini_set('display_errors', '0');
+			if (PHP_SAPI === 'cli' || defined('STDIN')) {
+				// In CLI mode, we want full error visibility even in production
+				error_reporting(E_ALL);
+				ini_set('display_errors', '1');
+			} else {
+				// Suppress errors on the web frontend
+				error_reporting(E_ALL & ~E_DEPRECATED & ~E_NOTICE);
+				ini_set('display_errors', '0');
+			}
+
+			// Always log errors in production (CLI or Web)
+			ini_set('log_errors', '1');
+			ini_set('error_log', APPPATH.'storage/logs/php_errors.log');
+
 			define('SHOW_DEBUG_BACKTRACE', false);
 			define('CI_DEBUG', false);
 			break;
