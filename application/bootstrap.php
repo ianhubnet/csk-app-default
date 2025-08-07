@@ -6,6 +6,12 @@
  */
 const APP_VERSION = '0.1';
 
+/**
+ * Application repository.
+ * @var string
+ */
+const APP_REPO = 'ianhubnet/csk-app-default';
+
 /*
 |--------------------------------------------------------------------------
 | Application Info
