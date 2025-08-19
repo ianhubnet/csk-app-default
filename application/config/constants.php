@@ -52,119 +52,148 @@ const APP_OFFLINE  = 'offline';
 // --------------------------------------------------------------------
 
 /**
- * UserLevel Class
+ * CookieKey
  *
- * Application-specific access levels based on the core system's AccessLevel.
+ * Final implementation of {@see CookieKeyInterface}.
+ * Exists as a convenience class to allow type-hinting against a concrete
+ * implementation instead of the interface when needed.
  *
- * This class is meant to be edited freely within the application to customize
- * or extend the default levels defined by CiSkeleton. All role-based access
- * checks should use this class instead of hard-coding numeric values.
+ * @since 3.9.0
+ */
+final class CookieKey implements CookieKeyInterface
+{
+}
+
+// --------------------------------------------------------------------
+
+/**
+ * SessionKey
  *
- * You can also define new constants (e.g., ACP, SUPPORT, etc) that refer to any
- * existing level from AccessLevel or define custom values for your own use.
+ * Final implementation of {@see SessionKeyInterface}.
+ * Exists as a convenience class for developers to type-hint
+ * against a concrete implementation instead of the interface.
+ *
+ * Applications can extend this class to define custom session keys.
+ *
+ * @since 3.9.0
+ */
+final class SessionKey implements SessionKeyInterface
+{
+}
+
+// --------------------------------------------------------------------
+
+/**
+ * UserLevel
+ *
+ * Application-specific access levels extending the core system's
+ * {@see UserLevelInterface}. This class provides aliases and
+ * customization points for role-based access checks.
+ *
+ * Developers are encouraged to use this class (instead of raw integers)
+ * when defining permissions, and may freely extend it to suit their
+ * application's needs.
  *
  * ---
+ * Example: restricting dashboard access
  *
- * Dashboard Access:
- * To restrict access to the main panel or specific areas of the back-end,
- * use the `ACP` constant. For example, to require users to be at least
- * authors to access the dashboard.
+ * ```php
+ * UserLevel::ACP = UserLevel::AUTHOR;
+ * ```
  *
- * 	UserLevel::ACP = UserLevel::AUTHOR
+ * Controllers can also restrict access via the `$class_level` property:
  *
- * ---
- *
- * Note:
- * Controller can define `$access_level` property to restrict access to
- * specific roles:
- *
- * 	protected $access_level = UserLevel::EDITOR
+ * ```php
+ * protected $class_level = UserLevel::EDITOR;
+ * ```
  *
  * ---
+ * Default role mapping:
  *
- * Default Role Levels:
- *
- * - UserLevel::REGULAR => AccessLevel::REGULAR  (1) (Regular user)
- * - UserLevel::AUTHOR  => AccessLevel::AUTHOR  (10) (Can create content)
- * - UserLevel::EDITOR  => AccessLevel::EDITOR  (20) (Can edit others' content)
- * - UserLevel::MANAGER => AccessLevel::MANAGER (30) (Access to content and user management)
- * - UserLevel::ADMIN   => AccessLevel::ADMIN   (40) (Administrative privileges)
- * - UserLevel::OWNER   => AccessLevel::OWNER   (50) (Full unrestricted access)
+ * - UserLevel::REGULAR → 1 (Regular user)
+ * - UserLevel::AUTHOR  → 10 (Can create content)
+ * - UserLevel::EDITOR  → 20 (Can edit others' content)
+ * - UserLevel::MANAGER → 30 (Content/user management)
+ * - UserLevel::ADMIN   → 40 (Administrative privileges)
+ * - UserLevel::OWNER   → 50 (Full unrestricted access)
  *
  * @since 2.168
+ * @since 3.9.0  Implements the new `UserLevelInterface` interface.
  */
-final class UserLevel
+final class UserLevel implements UserLevelInterface
 {
 	// --------------------------------------------------------------------
-	// CiSkeleton default levels
+	// Application-level aliases or custom levels
 	// --------------------------------------------------------------------
 
 	/**
-	 * This is the default role assigned to new users, and used
-	 * as a fallback when no valid role is provided.
-	 * @var int
-	 */
-	public const REGULAR = AccessLevel::REGULAR;
-
-	/**
-	 * Can create content but not edit others'.
-	 * @var int
-	 */
-	public const AUTHOR = AccessLevel::AUTHOR;
-
-	/**
-	 * Can review, edit, or moderate content by others.
-	 * @var int
-	 */
-	public const EDITOR = AccessLevel::EDITOR;
-
-	/**
-	 * Can manage content, users, and moderate high-level ares.
-	 * @var int
-	 */
-	public const MANAGER = AccessLevel::MANAGER;
-
-	/**
-	 * Has access to system settings and full control over data.
-	 * @var int
-	 */
-	public const ADMIN = AccessLevel::ADMIN;
-
-	/**
-	 * Top-level access - can do anything in the system.
-	 * @var int
-	 */
-	public const OWNER = AccessLevel::OWNER;
-
-	// --------------------------------------------------------------------
-	// App-level aliases or custom levels.
-	// --------------------------------------------------------------------
-
-	/**
-	 * Minimum level required to access the dashboard/admin panel.
-	 * Change this to elevate or restrict who can log into the back-end.
+	 * Minimum access level required for dashboard/admin panel access.
+	 * Adjust to widen or restrict who can log into the back-end.
 	 *
 	 * @var int
 	 */
 	public const ACP = self::AUTHOR;
 
 	/**
-	 * Minimum level required to bypass demo mode restrictions.
-	 * Change this to control which users retain full access in demo mode.
+	 * Minimum access level required to bypass demo mode restrictions.
+	 * Adjust to define which users retain full access in demo mode.
 	 *
 	 * @var int
 	 */
 	public const DEMO = self::OWNER;
 
 	/**
-	 * These are merged with AccessLevel::$labels when generating levels.
-	 * Only define labels for roles intended to be shown to users.
+	 * Translatable labels for CSK's core roles.
+	 * Maps access level integers to language keys used in dropdowns,
+	 * user profiles, and other UI elements.
+	 *
+	 * If you add new role constants above, please make sure to add their
+	 * corresponding language keys, and DO NOT alter core labels.
 	 *
 	 * @example
-	 * 	self::MODERATOR => 'role_moderator'
+	 * self::EDITOR => 'role_editor'
 	 *
 	 * @var array<int, string>
 	 */
-	public static $labels = [];
+	public static $labels = [
+		// Core-reserved role labels (do not touch)
+		self::REGULAR => 'role_regular',
+		self::AUTHOR => 'role_author',
+		self::EDITOR => 'role_editor',
+		self::MANAGER => 'role_manager',
+		self::ADMIN => 'role_admin',
+		self::OWNER => 'role_owner',
+		// Application-specific role labels (add your below)
+	];
 
+}
+
+// --------------------------------------------------------------------
+
+/**
+ * Application-Specific Relation Keys.
+ *
+ * Extends the base `RelationKeyInterface` with project-level constants
+ * for defining relationships. This is the class you should use within
+ * your application when referencing relation keys, rather than directly
+ * using the core interface.
+ *
+ * Benefits of using this wrapper:
+ * - Keeps application-level relation constants centralized.
+ * - Allows extension with domain-specific keys (e.g., "follower",
+ *   "subscriber", "liked", etc.).
+ * - Protects core definitions while enabling customization.
+ *
+ * @example
+ * ```php
+ * RelationKey::PARENT; // Returns 'parent'
+ * RelationKey::OWNER;  // Returns 'owner'
+ * ```
+ *
+ * @since 3.9.1
+ */
+final class RelationKey implements RelationKeyInterface
+{
+	// Currently inherits all constants from RelationKeyInterface.
+	// Add application-specific relation keys here if needed.
 }
