@@ -154,7 +154,7 @@ final class UserLevel
 	 *
 	 * @var int
 	 */
-	public const DEMO = self::OWNER + 10;
+	public const DEMO = self::OWNER;
 
 	/**
 	 * These are merged with AccessLevel::$labels when generating levels.
