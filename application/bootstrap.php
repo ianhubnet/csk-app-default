@@ -1,15 +1,14 @@
 <?php
 
-/**
- * CiSkeleton Application version.
- * @since 2.145
- */
+/*
+|--------------------------------------------------------------------------
+| Application Version and Repository
+|--------------------------------------------------------------------------
+|
+| Used to track app status and possibly check for updates.
+|
+*/
 const APP_VERSION = '0.1';
-
-/**
- * Application repository.
- * @var string
- */
 const APP_REPO = 'ianhubnet/csk-app-default';
 
 /*
@@ -17,77 +16,130 @@ const APP_REPO = 'ianhubnet/csk-app-default';
 | Application Info
 |--------------------------------------------------------------------------
 |
-| Here you can define your application global information.
+| Define global information about the app.
 |
-|	APP_LABEL:	App name (default: CI Skeleton)
-|	APP_SHORT:	App short name (default: CSK)
-|	APP_SLOGAN:	App default description.
-|	APP_AUTHOR:	App global author name.
-| 	APP_KEYWORDS:	App name (default: combines label and description)
+|  APP_LABEL    : App name (default: CI Skeleton)
+|  APP_SHORT    : App short name (default: CSK)
+|  APP_SLOGAN   : App default description.
+|  APP_AUTHOR   : App global author name.
+|  APP_KEYWORDS : App name (default: combines label and description)
 |
 */
-const APP_LABEL      = Platform::LABEL;
-const APP_SHORT      = Platform::SHORT;
-const APP_SLOGAN     = Platform::SLOGAN;
-const APP_AUTHOR     = Platform::AUTHOR;
-const APP_KEYWORDS   = Platform::KEYWORDS;
+const APP_LABEL = Platform::LABEL;
+const APP_SHORT = Platform::SHORT;
+const APP_SLOGAN = Platform::SLOGAN;
+const APP_AUTHOR = Platform::AUTHOR;
+const APP_KEYWORDS = Platform::KEYWORDS;
 
-/**
- * Because Web Hosting providers set a limit to how my
- * PHP scripts you have running at a single time, setting
- * a limit to reqests that will be used by KB_Router can
- * be handy.
- *
- * However, there is another way (though not test), using .htaccess
- * by passing the following code somewhere:
- *
- * <IfModule mod_limitipconn.c>
- *     MaxConnPerIP 10 # limit to 10
- *     OnlyIPLimit application/x-php
- * </IfModule>
- *
- * The default limit used by KB_Router is 20, if you feel it is too high
- * or too low, please uncomment the line below and set the limit you wish.
- */
+/*
+|--------------------------------------------------------------------------
+| Request Limiter
+|--------------------------------------------------------------------------
+|
+| Because Web Hosting providers set a limit to how many PHP scripts you have
+| running at a single time, setting a limit to requests can be handy.
+|
+| However, there is another way (though not tested), using `.htaccess` by
+| pasting the following somewhere in the file:
+|
+| <IfModule mod_limitipconn.c>
+|     MaxConnPerIP 10 # limit to 10
+|     OnlyIPLimit application/x-php
+| </IfModule>
+|
+| The default limit used is 20, if you it is too low or too high, please
+| uncomment the line below and set the limit you wish to use.
+|
+*/
 // const CI_REQUEST_LIMIT = 20;
 
 // --------------------------------------------------------------------
-// YOU MAY EDIT LINES BELOW.
+// BELOW ARE CODE EXAMPLES | FEEL FREE TO EDIT
 // --------------------------------------------------------------------
 
-// Application classes.
-// Autoloader::add_classes(array(
-/**
- * Add classes you want to add/override here.
- * @example: 'Classname' => APPPATH.'libraries/Classname.php'
- */
-// ));
+/*
+|--------------------------------------------------------------------------
+| Autoloader Class Registration
+|--------------------------------------------------------------------------
+|
+| In order to speed up class loading and usage, it is advised to add your
+| application classes to `Autoloader`.
+|
+| Examples:
+| 1. Registering a single class:
+|     Autoloader::add_class('MyClass', __DIR__.'/core/MyClass.php');
+|
+| 2. Registering multiple classes:
+|     Autoloader::add_classes([
+|         'MyClass1' => __DIR__.'/MyClass1.php',
+|         'MyClass2' => APPPATH.'/core/MyClass2.php',
+|     ]);
+|
+| Both methods of registering classes accept an additional argument that is used
+| to conditionally register classes. In the example below, we want to register
+| a new class but only for the admin area of the application:
+|
+|     Autoloader::add_class('MyAdminClass', __DIR__.'/MyAdminClass.php', CI_ADMIN);
+|
+*/
+// Autoloader::add_classes([]);
 
-/**
- * This filter is fired before loading default language files.
- * @since 2.18
- */
-// add_filter('language_files', function($files) {
-// 	return $files; // always return $files
-// });
-
-/**
- * This action is fired before Skeleton libraries are loaded.
- * @since 2.13
- */
-// add_action('init', function() {
+/*
+|--------------------------------------------------------------------------
+| Hooks (Actions & Filters)
+|--------------------------------------------------------------------------
+|
+| Actions and filters (hooks in general) are the beauty of CiSkeleton.
+| They can be registered from the application itself, modules, themes, or
+| event plugins.
+|
+| You can register your hooks early in this file and they will be executed
+| during the request process.
+|
+| `add_filter`  : Hooks a function or method to a specific filter action.
+| `add_action`  : Hooks a function to a specific action.
+| `once_action` : Hooks a one-time function to a specific action.
+|
+| The example below is an action that is triggered right after all core classes
+| and libraries have been loaded.
+|
+*/
+// add_action('init', function () {
 // 	// Do your magic.
 // });
 
-// --------------------------------------------------------------------
-// Additional modules and themes details.
-// --------------------------------------------------------------------
+/*
+|--------------------------------------------------------------------------
+| Hub Drivers Registration
+|--------------------------------------------------------------------------
+|
+| The core driver in CiSkeleton is `CI_Hub`. It is an all-in-one driver that
+| makes the heart of the framework and gives you all what you need to get started.
+|
+| If you wish to add extra drivers from the application side, simply make sure
+| to have `libraries/Hub/drivers/` directory, inside which you create as many
+| drivers as you want. In the example below, we are registering a driver called
+| 'test', so in order for this to work:
+| 1. We need the file: `libraries/Hub/drivers/Hub_test.php`.
+| 2. We need the class `Hub_test extends CI_Driver` (or even `CI_Hub_test`).
+| 3. Optional: To speed up class lookup, do not forget to register the driver's
+|    class with `Autoloader::add_class('Hub_test', APPPATH.'libraries/Hub/drivers/Hub_test.php')`.
+|
+*/
+// Platform::add_drivers('test');
 
-/**
- * In case you want to add more details to modules headers, please
- * use the action below.
- * @since 2.12
- */
-// add_action('modules_headers', function($headers) {
-// 	return $headers;
-// });
+/*
+|--------------------------------------------------------------------------
+| Request Rewrites
+|--------------------------------------------------------------------------
+|
+| If you wish to register a URI rewrite rule that will redirect the user to
+| the appropriate URI, you can use `Platform::add_rewrite()`.
+|
+| Example: `Platform::add_rewrite('blog_category', 'blog/category');`.
+|
+| In the example above, if the user visits `/blog_category/gaming` for example
+| they will be redirected to `blog/category/gaming`.
+|
+*/
+// Platform::add_rewrite('blog_category', 'blog/category');
