@@ -12,6 +12,7 @@ _dev
 /application/storage/*
 
 # Ignore some config files
+/application/config/.options.cache.php
 /application/config/base_controller.php
 /application/config/*/base_controller.php
 /application/config/config.php
