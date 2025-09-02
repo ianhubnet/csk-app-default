@@ -45,12 +45,11 @@ $autoload['packages'] = [];
 |  Auto-load Libraries
 | -------------------------------------------------------------------
 | These are the classes located in system/libraries/ or your
-| application/libraries/ directory, with the addition of the
-| 'database' library, which is somewhat of a special case.
+| application/libraries/ directory.
 |
 | Prototype:
 |
-|	$autoload['libraries'] = ['database', 'email', 'session'];
+|	$autoload['libraries'] = ['email', 'session'];
 |
 | You can also supply an alternative library name to be assigned
 | in the controller:

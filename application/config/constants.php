@@ -18,17 +18,6 @@ defined('BASEPATH') || exit('A moment of silence for your attempt.');
  * @since       2.18
  */
 
-/**
- * Class Extension Prefix
- *
- * This item allows you to set filename/classname prefix when extensing
- * native classes. For more information please see the user guide:
- *
- * @see https://codeigniter.com/userguide3/general/core_classes.html
- * @see https://codeigniter.com/userguide3/general/creating_libraries.html
- */
-const CI_SUBCLASS_PREFIX = 'MY_';
-
 // --------------------------------------------------------------------
 
 /**
