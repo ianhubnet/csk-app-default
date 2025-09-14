@@ -18,13 +18,6 @@
 ob_start(); // Start output buffering to ensure headers can be sent later.
 
 /**
- * Define the directory separator constant.
- *
- * This ensures platform-independent path building.
- */
-define('DS', DIRECTORY_SEPARATOR);
-
-/**
  * ------------------------------------------------------------------------
  * Application Bootstrapping Closure
  * ------------------------------------------------------------------------
@@ -36,7 +29,7 @@ define('DS', DIRECTORY_SEPARATOR);
  * - Configures PHP error reporting
  * - Ensures compatibility with CLI and web server
  */
-(static function (): void {
+(function () {
 
 	/**
 	 * Normalize working directory for CLI.
@@ -64,14 +57,14 @@ define('DS', DIRECTORY_SEPARATOR);
 	 *
 	 * @throws RuntimeException if the path is invalid.
 	 */
-	$resolve = static function (string $path, string $name = ''): string {
+	$resolve = function ($path, $name = '') {
 		// Try resolving to absolute path
 		if (($real = realpath($path)) !== false) {
 			return $real;
 		}
 
 		// Normalize slashes and check directory existence manually
-		$real = rtrim(str_replace(['/', '\\'], DS, $path), DS);
+		$real = rtrim(str_replace(['/', '\\'], DIRECTORY_SEPARATOR, $path), DIRECTORY_SEPARATOR);
 		if (is_dir($real)) {
 			return $real;
 		}
@@ -97,97 +90,16 @@ define('DS', DIRECTORY_SEPARATOR);
 	 */
 
 	// Path to this front controller (index.php)
-	define('FCPATH', __DIR__.DS);
+	define('FCPATH', __DIR__.DIRECTORY_SEPARATOR);
 
 	// Path to CiSkeleton system folder
-	define('BASEPATH', $resolve('skeleton', 'system').DS);
+	define('BASEPATH', $resolve('skeleton', 'system').DIRECTORY_SEPARATOR);
 
 	// Path to the application folder
-	define('APPPATH', $resolve('application', 'application').DS);
+	define('APPPATH', $resolve('application', 'application').DIRECTORY_SEPARATOR);
 
 	// The name of the "system" folder (used internally)
 	define('SYSDIR', basename(BASEPATH));
-
-	// --------------------------------------------------------------------
-	// ENVIRONMENT SETUP
-	// --------------------------------------------------------------------
-
-	/**
-	 * Environment file path (APPPATH/config/environment)
-	 *
-	 * This file should contain a single line: "development", "testing", or "production".
-	 */
-	$envfile = APPPATH.'config'.DS.'environment';
-
-	/**
-	 * Default to "development" if file does not exist.
-	 * Also create the file with the default value.
-	 */
-	if (!is_file($envfile)) {
-		$environment = 'development';
-		file_put_contents($envfile, $environment, LOCK_EX);
-	} else {
-		$environment = trim(file_get_contents($envfile));
-	}
-
-	/**
-	 * Fallback if file contents are invalid.
-	 * Only the three official environments are allowed.
-	 */
-	if (!in_array($environment, ['development', 'testing', 'production'], true)) {
-		$environment = 'development';
-		file_put_contents($envfile, $environment, LOCK_EX);
-	}
-
-	/**
-	 * Define the ENVIRONMENT constant.
-	 */
-	define('ENVIRONMENT', $environment);
-
-	/**
-	 * Set PHP error reporting levels based on ENVIRONMENT.
-	 *
-	 * You may customize this if you add more environments.
-	 */
-	switch (ENVIRONMENT) {
-		case 'development':
-		case 'testing':
-			// Show all errors, including strict and deprecated
-			error_reporting(E_ALL);
-			ini_set('display_errors', '1');
-			ini_set('log_errors', '1');
-			ini_set('error_log', APPPATH.'storage/logs/php_errors.log');
-
-			define('SHOW_DEBUG_BACKTRACE', true);
-			define('CI_DEBUG', true);
-			break;
-
-		case 'production':
-			if (PHP_SAPI === 'cli' || defined('STDIN')) {
-				// In CLI mode, we want full error visibility even in production
-				error_reporting(E_ALL);
-				ini_set('display_errors', '1');
-			} else {
-				// Suppress errors on the web frontend
-				error_reporting(E_ALL & ~E_DEPRECATED & ~E_NOTICE);
-				ini_set('display_errors', '0');
-			}
-
-			// Always log errors in production (CLI or Web)
-			ini_set('log_errors', '1');
-			ini_set('error_log', APPPATH.'storage/logs/php_errors.log');
-
-			define('SHOW_DEBUG_BACKTRACE', false);
-			define('CI_DEBUG', false);
-			break;
-
-		default:
-			// This should never happen because we validated earlier
-			header('HTTP/1.1 503 Service Unavailable.', true, 503);
-			echo 'The application environment is not set correctly.';
-			exit(1); // EXIT_ERROR
-	}
-
 })(); // <-- END of bootstrapping closure
 
 /**
