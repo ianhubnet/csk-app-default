@@ -10,7 +10,7 @@
  *
  *   - packages  : Array of package paths.
  *   - libraries : Array of library names.
- *   - drivers   : Array of drivers (optionally aliased).
+ *   - drivers   : Array of drivers.
  *   - helper    : Array of helper files.
  *   - config    : Array of custom config files.
  *   - language  : Array of language files (these are always deferred
@@ -38,12 +38,20 @@ $autoload['packages'] = [];
 
 /*
 | -------------------------------------------------------------------
+|  Auto-load Config files
+| -------------------------------------------------------------------
+| Example:
+|  $autoload['config'] = ['config1', 'config2'];
+| NOTE: Only for custom config files.
+*/
+$autoload['config'] = [];
+
+/*
+| -------------------------------------------------------------------
 |  Auto-load Libraries
 | -------------------------------------------------------------------
 | Example:
 |  $autoload['libraries'] = ['email', 'session'];
-| You can also alias:
-|  $autoload['libraries'] = ['agent' => 'ua'];
 */
 $autoload['libraries'] = [];
 
@@ -53,8 +61,6 @@ $autoload['libraries'] = [];
 | -------------------------------------------------------------------
 | Example:
 |  $autoload['drivers'] = ['cache'];
-| You can also alias:
-|  $autoload['drivers'] = ['cache' => 'cch'];
 */
 $autoload['drivers'] = [];
 
@@ -69,36 +75,32 @@ $autoload['helper'] = [];
 
 /*
 | -------------------------------------------------------------------
-|  Auto-load Config files
+|  Auto-load Models
 | -------------------------------------------------------------------
 | Example:
-|  $autoload['config'] = ['config1', 'config2'];
-| NOTE: Only for custom config files.
+|  $autoload['model'] = ['first_model', 'second_model'];
 */
-$autoload['config'] = [];
+$autoload['model'] = [];
 
 /*
 | -------------------------------------------------------------------
 |  Auto-load Language files
 | -------------------------------------------------------------------
 | Example:
-|  $autoload['language'] = ['core', 'app'];
+|  $autoload['language'] = [
+|      'file1',                  // always load
+|      'file2' => CI_ADMIN,      // load only in admin
+|      'file3' => !CI_ADMIN,     // load only in frontend
+|      'file4' => fn() => false, // custom condition
+|  ];
 |
-| NOTE: Do not include the "_lang" suffix.
-| E.g. "core_lang.php" → ['core']
+| Rules:
+|  - 'file'            → Always loaded.
+|  - 'file' => <expr>  → Loaded only when <expr> evaluates to true.
 |
-| These are automatically deferred until the active language
-| has been determined.
+| NOTE: Do not include the "_lang" suffix (e.g. "file_lang.php" → ['file'])
+|
+| These are always deferred internally until the active
+| language has been determined.
 */
 $autoload['language'] = [];
-
-/*
-| -------------------------------------------------------------------
-|  Auto-load Models
-| -------------------------------------------------------------------
-| Example:
-|  $autoload['model'] = ['first_model', 'second_model'];
-| You can also alias:
-|  $autoload['model'] = ['first_model' => 'first'];
-*/
-$autoload['model'] = [];
