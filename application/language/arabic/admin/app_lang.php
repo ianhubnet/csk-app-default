@@ -1,12 +1,15 @@
 <?php
 
 /**
- * Dashboard Language (Arabic)
+ * Dashboard Language File (Arabic)
  *
- * @package 	CodeIgniter
- * @subpackage 	Skeleton\Application
- * @category 	Language
- * @author      Kader Bouyakoub <bkader[at]mail[dot]com>
- * @link        http://bit.ly/KaderGhb
- * @copyright   Copyright (c) 2025, Kader Bouyakoub (http://bit.ly/KaderGhb)
+ * Contains all translatable strings for the admin interface.
+ *
+ * Note: Strings should be grouped by context for easy maintenance.
+ *
+ * @package    App\Language
+ * @category   Admin
+ * @author     Kader Bouyakoub <bkader[at]mail[dot]com>
+ * @copyright  Copyright (c) 2025, Kader Bouyakoub
+ * @since      1.0
  */

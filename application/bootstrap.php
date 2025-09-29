@@ -13,26 +13,6 @@ const APP_REPO = 'ianhubnet/csk-app-default';
 
 /*
 |--------------------------------------------------------------------------
-| Application Info
-|--------------------------------------------------------------------------
-|
-| Define global information about the app.
-|
-|  APP_LABEL    : App name (default: CI Skeleton)
-|  APP_SHORT    : App short name (default: CSK)
-|  APP_SLOGAN   : App default description.
-|  APP_AUTHOR   : App global author name.
-|  APP_KEYWORDS : App name (default: combines label and description)
-|
-*/
-const APP_LABEL = Platform::LABEL;
-const APP_SHORT = Platform::SHORT;
-const APP_SLOGAN = Platform::SLOGAN;
-const APP_AUTHOR = Platform::AUTHOR;
-const APP_KEYWORDS = Platform::KEYWORDS;
-
-/*
-|--------------------------------------------------------------------------
 | Request Limiter
 |--------------------------------------------------------------------------
 |
