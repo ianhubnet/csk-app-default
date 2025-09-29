@@ -3,56 +3,56 @@ _dev
 *_dev.*
 
 # Ignore unnecessary folders
-**/.DS_Store
-.phpintel
+.DS_Store
+/.phpintel/
 
-# ====== APPLICATION ====== #
-
-# Ignore all cache files
-/application/storage/*
-
-# Ignore some config files
+# Ignore some app config files
+/application/config/.environment
 /application/config/.options.cache.php
 /application/config/base_controller.php
 /application/config/*/base_controller.php
 /application/config/config.php
-!/application/config/*/config.php
 /application/config/database.php
 /application/config/*/database.php
+/application/config/language.php
+/application/config/*/language.php
 /application/config/trusted_hosts.php
 /application/config/*/trusted_hosts.php
-/application/config/*/language.php
-/application/config/language.php
-/application/config/environment
 
-# Ignore Welcome controller
-/application/controllers/Welcome.php
-
-# Ignore all log files
-/application/logs/*
-
-# Ignore all modules
+# Ignore all modules installed in app directory
 # See: ianhubnet/csk-packages/tree/main/packages/modules
 /application/modules/*
+!/application/modules/
 
-# Ignore welcome view
-/application/views/welcome.php
+# Ignore all plugins installed in app directory
+# See: ianhubnet/csk-packages/tree/main/packages/plugins
+/application/plugins/*
+!/application/plugins/
 
-# ====== CONTENT ====== #
+# Ignore all files in storage except needed ones
+/application/storage/*
+!/application/storage/dist/
+!/application/storage/data/
+
+#=== CONTENT=== #
 
 # Ignore all cache files
 /content/cache/*
-
-# Ignore all captcha files
-/content/captcha/*
+!/content/cache/
 
 # Ignore all common assets
 # See: ianhubnet/csk-common
 /content/common/*
 
-# Ignore all modules
+# Ignore all modules installed in public directory
 # See: ianhubnet/csk-packages/tree/main/packages/modules
 /content/modules/*
+!/content/modules/
+
+# Ignore all plugins installed in public directory
+# See: ianhubnet/csk-packages/tree/main/packages/plugins
+/content/plugins/*
+!/content/plugins/
 
 # Ignore all themes
 # See: ianhubnet/csk-packages/tree/main/packages/themes
@@ -60,10 +60,27 @@ _dev
 
 # Ignore all uploaded files
 /content/uploads/*
+!/content/uploads/
 
-# Ignore `skeleton`, CSK core folder
+# Ignore `skeleton`, CSK core folder (may vary)
 # See: ianhubnet/csk-core
 /skeleton/*
+
+# Ignore dependency directory
+/vendor/
+
+# Ignore composer lock file
+/composer.lock
+
+# Ignore PHP CS Fixer cache
+/.php-cs-fixer.cache
+
+# Ignore Rector cache (if you use it)
+/rector.cache
+
+# Ignore logs and env files (just in case)
+*.log
+/.env
 
 # Sublime Text cache files
 *~
@@ -77,7 +94,12 @@ _dev
 *.tmPreferences.cache
 *.tmlanguage.cache
 
-# keep all .htaccess, .gitkeep and index.html
+# IDE/editor configs
+/.idea/
+/.vscode/
+/*.code-workspace
+
+# Always keep these
 !**/.htaccess
 !**/.gitkeep
 !**/index.html
