@@ -16,13 +16,6 @@
 final class Welcome extends Public_Controller
 {
 	/**
-	 * Layout file to use for method that have output render.
-	 *
-	 * @var string|null
-	 */
-	protected $layout = 'double';
-
-	/**
 	 * Index Page for this controller.
 	 *
 	 * Maps to the following URL

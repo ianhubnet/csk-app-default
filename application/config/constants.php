@@ -21,22 +21,11 @@ defined('BASEPATH') || exit('A moment of silence for your attempt.');
 // --------------------------------------------------------------------
 
 /**
- * Route reserved constants.
- * AR_* = "App Route"
+ * The default controller to use if none is set in config.
  *
- * APP_ADMIN     URL used to access the dashboard. Default: "admin" for "/admin/".
- * APP_BASE      The default controller to use if none is set in database.
- * APP_LOGIN     Route used for the login page.
- * APP_LOGOUT    Route used to log users out.
- * APP_REGISTER  Route used for the registration page.
- * APP_OFFLINE   Route used when the site is in maintenance/offline mode.
+ * @var string
  */
-const APP_ADMIN    = 'admin';
-const APP_BASE     = 'welcome';
-const APP_LOGIN    = 'login';
-const APP_LOGOUT   = 'logout';
-const APP_REGISTER = 'register';
-const APP_OFFLINE  = 'offline';
+const APP_BASE = 'welcome';
 
 // --------------------------------------------------------------------
 
