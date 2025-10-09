@@ -1,40 +1,42 @@
-<div class="row row-cols-1 gap-3">
+<div class="row row-cols-1 py-5 text-center">
 	<div class="col">
-		<div class="p-5 text-center bg-body-tertiary rounded-3">
+		<h1 class="display-5 fw-bold text-primary mb-0"><?= line('welcome_h1') ?></h1>
+		<p class="lead text-muted mt-3 mb-0">
+			<?= line('welcome_p1') ?>
+		</p>
 
-			<h1 class="text-body-emphasis"><?= line('welcome_h1') ?></h1>
-			<p class="col-lg-8 mx-auto fs-5 text-muted">
-				<?= line('welcome_p1') ?>
-			</p>
-			<?php if (!$this->user): ?>
-			<div class="d-inline-flex gap-2 mt-4">
-				<?php if ($this->config->item('allow_registration')): ?>
-				<?= anchor('register', fa_icon('user-plus me-2', line('create_account')), [
-					'role' => 'button',
-					'class' => 'btn btn-primary btn-lg px-4 rounded-pill'
-				]) ?>
-				<?php endif ?>
-				<?= anchor('login', fa_icon('sign-in me-2', line('login')), [
-					'role' => 'button',
-					'class' => 'btn btn-outline-secondary btn-lg px-4 rounded-pill'
-				]) ?>
-			</div>
-			<?php endif ?>
+		<div class="d-flex justify-content-center gap-3 flex-wrap mt-4">
+			<a href="<?= Platform::WIKI_URL ?>" target="_blank" rel="noopener" class="btn btn-primary">
+				<i class="fa fa-fw fa-book me-2"></i><?= line('documentation') ?>
+			</a>
+			<?php
+			if (!$this->user) {
+				echo anchor('login', fa_icon('sign-in-alt me-2', line('login')), [
+					'class' => 'btn btn-outline-secondary'
+				]);
+			} elseif ($this->user->dashboard) {
+				echo anchor('admin', fa_icon('dashboard me-2', line('dashboard')), [
+					'class' => 'btn btn-outline-secondary'
+				]);
+			}
+			?>
 		</div>
 	</div><!--/.col-->
 
-	<div class="col mt-3 d-flex flex-column gap-3">
-		<p class="m-0">
-			<?= line('welcome_p2') ?><br><code>application\views\welcome.php</code>
-		</p>
-		<p class="m-0">
-			<?= line('welcome_p3') ?><br><code>application\controllers\Welcome.php</code>
-		</p>
-		<p class="m-0">
-			<?= sline('welcome_p4', 'https://www.codeigniter.com/userguide3/') ?>
-		</p>
-		<p class="m-0">
-			<?= sline('welcome_footer', CI_VERSION, CSK_VERSION) ?>
-		</p>
+	<div class="col mt-5">
+		<div class="d-flex flex-column justify-content-center gap-2 small text-muted">
+			<p class="mb-0">
+				<?= line('welcome_p2') ?><code class="ms-1">application\views\welcome.php</code>
+			</p>
+			<p class="mb-0">
+				<?= line('welcome_p3') ?><code class="ms-1">application\controllers\Welcome.php</code>
+			</p>
+			<p class="mb-0">
+				<?= sline('welcome_p4', Platform::WIKI_URL) ?>
+			</p>
+			<p class="mb-0">
+				<?= sline('welcome_footer', CI_VERSION, CSK_VERSION) ?>
+			</p>
+		</div>
 	</div><!--/.col-->
 </div><!--/.row-->
