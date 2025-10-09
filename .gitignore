@@ -4,8 +4,7 @@ _dev
 
 # Ignore unnecessary folders
 .DS_Store
-/.phpintel/
-**/.phpintel/
+.phpintel
 
 # Ignore some app config files
 /application/config/.environment
