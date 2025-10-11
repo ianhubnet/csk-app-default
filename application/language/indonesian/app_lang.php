@@ -32,4 +32,4 @@ $lang['welcome_p1'] = 'Halaman yang Anda lihat ini dihasilkan secara dinamis ole
 $lang['welcome_p2'] = 'Jika Anda ingin mengedit halaman ini, Anda dapat menemukannya di:';
 $lang['welcome_p3'] = 'Controller yang sesuai untuk halaman ini dapat ditemukan di:';
 $lang['welcome_p4'] = 'Jika ini adalah pertama kalinya Anda menjelajahi CiSkeleton, Anda sebaiknya mulai dengan membaca <a href="%s" target="_blank">Panduan Pengguna</a>.';
-$lang['welcome_footer'] = 'Halaman dirender dalam <strong>{elapsed_time}</strong>&nbsp;detik. CodeIgniter <strong>v%s</strong>. Skeleton <strong>v%s</strong>';
+$lang['welcome_footer'] = 'Halaman dirender dalam <strong>%s</strong>&nbsp;detik. CodeIgniter <strong>v%s</strong>. Skeleton <strong>v%s</strong>.';

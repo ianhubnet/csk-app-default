@@ -32,4 +32,4 @@ $lang['welcome_p1'] = 'Görmekte olduğunuz sayfa, CiSkeleton tarafından dinami
 $lang['welcome_p2'] = 'Bu sayfayı düzenlemek istiyorsanız, şu konumda bulabilirsiniz:';
 $lang['welcome_p3'] = 'Bu sayfaya ait kontrolcü şu konumda bulunur:';
 $lang['welcome_p4'] = 'CiSkeleton\'ı ilk kez keşfediyorsanız, <a href="%s" target="_blank">Kullanıcı Kılavuzu</a>nu okumalısınız.';
-$lang['welcome_footer'] = 'Sayfa <strong>{elapsed_time}</strong>&nbsp;saniyede oluşturuldu. CodeIgniter <strong>v%s</strong>. Skeleton <strong>v%s</strong>';
+$lang['welcome_footer'] = 'Sayfa <strong>%s</strong>&nbsp;saniyede oluşturuldu. CodeIgniter <strong>v%s</strong>. Skeleton <strong>v%s</strong>.';

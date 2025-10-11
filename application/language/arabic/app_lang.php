@@ -32,4 +32,4 @@ $lang['welcome_p1'] = 'تم إنشاء هذه الصفحة ديناميكيًا 
 $lang['welcome_p2'] = 'إذا كنت ترغب في تعديل هذه الصفحة ستجدها في:';
 $lang['welcome_p3'] = 'يمكنك العثور على وحدة التحكم في هذه الصفحة في:';
 $lang['welcome_p4'] = 'إذا كنت تستكشف سي سكلتون للمرة الأولى، فيجب أن تبدأ بقراءة <a href="%s" target="_blank">دليل المستخدم</a>.';
-$lang['welcome_footer'] = 'تم تقديم الصفحة في <strong>{elapsed_time}</strong>&nbsp;ثانية. كوديجنتر <strong>v%s</strong>. سكلتون <strong>v%s</strong>';
+$lang['welcome_footer'] = 'تم تقديم الصفحة في <strong>%s</strong>&nbsp;ثانية. كوديجنتر <strong>v%s</strong>. سكلتون <strong>v%s</strong>.';

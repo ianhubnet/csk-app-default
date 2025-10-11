@@ -32,4 +32,4 @@ $lang['welcome_p1'] = 'ご覧のページはCiSkeletonによって動的に生�
 $lang['welcome_p2'] = 'このページを編集したい場合は、次にアクセスできます：';
 $lang['welcome_p3'] = 'このページの対応するコントローラは次にあります：';
 $lang['welcome_p4'] = 'CiSkeletonを初めて探索する場合は、まず<a href="%s" target="_blank">ユーザーガイド</a>を読むと良いでしょう。';
-$lang['welcome_footer'] = 'ページの表示にかかった時間：<strong>{elapsed_time}</strong> 秒。 CodeIgniter <strong>v%s</strong>。Skeleton <strong>v%s</strong>。';
+$lang['welcome_footer'] = 'ページの表示にかかった時間：<strong>%s</strong> 秒。 CodeIgniter <strong>v%s</strong>。Skeleton <strong>v%s</strong>。';

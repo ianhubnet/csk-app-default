@@ -32,4 +32,4 @@ $lang['welcome_p1'] = 'Strona, którą oglądasz, jest generowana dynamicznie pr
 $lang['welcome_p2'] = 'Jeśli chcesz edytować tę stronę, znajdziesz ją pod adresem:';
 $lang['welcome_p3'] = 'Odpowiedni kontroler dla tej strony znajduje się w:';
 $lang['welcome_p4'] = 'Jeśli dopiero zaczynasz z CiSkeleton, zacznij od przeczytania <a href="%s" target="_blank">Przewodnika użytkownika</a>.';
-$lang['welcome_footer'] = 'Strona renderowana w czasie <strong>{elapsed_time}</strong>&nbsp;sekund. CodeIgniter <strong>v%s</strong>. Skeleton <strong>v%s</strong>';
+$lang['welcome_footer'] = 'Strona renderowana w czasie <strong>%s</strong>&nbsp;sekund. CodeIgniter <strong>v%s</strong>. Skeleton <strong>v%s</strong>.';

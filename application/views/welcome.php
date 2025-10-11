@@ -35,7 +35,7 @@
 				<?= sline('welcome_p4', Platform::WIKI_URL) ?>
 			</p>
 			<p class="mb-0">
-				<?= sline('welcome_footer', CI_VERSION, CSK_VERSION) ?>
+				<?= sline('welcome_footer', '{elapsed_time}', CI_VERSION, CSK_VERSION) ?>
 			</p>
 		</div>
 	</div><!--/.col-->
