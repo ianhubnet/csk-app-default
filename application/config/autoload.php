@@ -103,4 +103,4 @@ $autoload['model'] = [];
 | These are always deferred internally until the active
 | language has been determined.
 */
-$autoload['language'] = [];
+$autoload['language'] = ['app', 'admin/app' => CI_ADMIN];
