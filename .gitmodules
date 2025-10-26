@@ -1,9 +1,0 @@
-[submodule "skeleton"]
-	path = skeleton
-	url = https://github.com/ianhubnet/csk-core.git
-[submodule "content/common"]
-	path = content/common
-	url = https://github.com/ianhubnet/csk-common
-[submodule "content/themes/default"]
-	path = content/themes/default
-	url = https://github.com/ianhubnet/csk-theme-default
