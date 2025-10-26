@@ -13,3 +13,6 @@
  * @copyright  Copyright (c) 2025, Kader Bouyakoub
  * @since      1.0
  */
+
+$lang['menu_main'] = 'Menu Chính';
+$lang['menu_social'] = 'Menu Mạng Xã Hội';

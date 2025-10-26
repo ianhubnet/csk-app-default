@@ -13,3 +13,6 @@
  * @copyright  Copyright (c) 2025, Kader Bouyakoub
  * @since      1.0
  */
+
+$lang['menu_main'] = 'Ana Menü';
+$lang['menu_social'] = 'Sosyal Menü';

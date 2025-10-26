@@ -13,3 +13,6 @@
  * @copyright  Copyright (c) 2025, Kader Bouyakoub
  * @since      1.0
  */
+
+$lang['menu_main'] = 'Hlavní nabídka';
+$lang['menu_social'] = 'Sociální nabídka';

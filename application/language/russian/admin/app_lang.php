@@ -13,3 +13,6 @@
  * @copyright  Copyright (c) 2025, Kader Bouyakoub
  * @since      1.0
  */
+
+$lang['menu_main'] = 'Главное меню';
+$lang['menu_social'] = 'Социальное меню';

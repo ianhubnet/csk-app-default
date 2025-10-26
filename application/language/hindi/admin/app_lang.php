@@ -13,3 +13,6 @@
  * @copyright  Copyright (c) 2025, Kader Bouyakoub
  * @since      1.0
  */
+
+$lang['menu_main'] = 'मुख्य मेनू';
+$lang['menu_social'] = 'सोशल मेनू';
