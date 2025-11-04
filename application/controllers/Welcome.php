@@ -32,7 +32,64 @@ final class Welcome extends Public_Controller
 	 */
 	public function index()
 	{
+		// Dummy Hero widget (see `views/welcome.php`)
+		$this->add_hero();
+
+		// Render page.
 		$this->render();
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Adds a simple Bootstrap Hero widget to welcome page.
+	 *
+	 * This is used as an example to show you how you can use `hero` widget.
+	 *
+	 * @return void
+	 */
+	private function add_hero()
+	{
+		// Prepare hero buttons.
+		$buttons[] = [
+			'icon' => 'book me-2',
+			'title' => $this->lang->line('documentation'),
+			'href' => Platform::WIKI_URL,
+			'attrs' => [
+				'class' => 'btn btn-primary',
+				'target' => '_blank',
+				'rel' => 'noopener'
+			],
+		];
+
+		// User logged in and as dashboard access.
+		if ($this->user?->dashboard) {
+			$buttons[] = [
+				'icon' => 'dashboard me-2',
+				'title' => $this->lang->line('dashboard'),
+				'href' => 'admin',
+				'attrs' => [
+					'class' => 'btn btn-outline-secondary',
+					'rel' => 'nofollow'
+				],
+			];
+		}
+		// Add login button for visitors
+		elseif (!$this->user) {
+			$buttons[] = [
+				'icon' => 'sign-in-alt me-2',
+				'title' => $this->lang->line('login'),
+				'href' => 'login',
+				'attrs' => ['class' => 'btn btn-outline-secondary'],
+			];
+		}
+
+		// We queue 'hero' button under 'welcome' slot.
+		$this->hub->theme->add_widget('hero', [
+			'title' => $this->lang->line('welcome_h1'),
+			'subtitle' => $this->lang->line('welcome_p1'),
+			'buttons' => $buttons
+		], 'welcome');
 	}
 
 }
