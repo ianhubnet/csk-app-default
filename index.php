@@ -41,13 +41,6 @@ ob_start(); // Start output buffering to ensure headers can be sent later.
 	}
 
 	/**
-	 * Define SELF as the name of the front controller.
-	 *
-	 * Used later for error messages.
-	 */
-	define('SELF', pathinfo(__FILE__, PATHINFO_BASENAME));
-
-	/**
 	 * Path resolver closure.
 	 *
 	 * @param string $path  The folder path to resolve.
@@ -57,7 +50,10 @@ ob_start(); // Start output buffering to ensure headers can be sent later.
 	 *
 	 * @throws RuntimeException if the path is invalid.
 	 */
-	$resolve = function ($path, $name = '') {
+	$resolve = static function ($path, $name = '') {
+		// Define the name of the front controller.
+		static $self = pathinfo(__FILE__, PATHINFO_BASENAME);
+
 		// Try resolving to absolute path
 		if (($real = realpath($path)) !== false) {
 			return $real;
@@ -70,8 +66,8 @@ ob_start(); // Start output buffering to ensure headers can be sent later.
 		}
 
 		// Build a meaningful error message
-		$name  = empty($name) ? basename($path) : $name;
-		$error = sprintf('Your %s folder path is invalid. Please fix "%s".', $name, SELF);
+		$name = empty($name) ? basename($path) : $name;
+		$error = sprintf('Your %s folder path is invalid. Please fix "%s".', $name, $self);
 
 		// CLI vs. Web error display
 		if (PHP_SAPI === 'cli' || defined('STDIN')) {
@@ -97,9 +93,6 @@ ob_start(); // Start output buffering to ensure headers can be sent later.
 
 	// Path to the application folder
 	define('APPPATH', $resolve('application', 'application').DIRECTORY_SEPARATOR);
-
-	// The name of the "system" folder (used internally)
-	define('SYSDIR', basename(BASEPATH));
 })(); // <-- END of bootstrapping closure
 
 /**

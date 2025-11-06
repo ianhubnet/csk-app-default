@@ -51,3 +51,8 @@ $config['display_pages'] = true;
 
 // Anchors attributes.
 $config['attributes'] = null;
+
+// Summary open/close tags and text.
+$config['summary_tag_open'] = '<p class="pagination-summary">';
+$config['summary_tag_close'] = '</p>';
+$config['summary_text'] = 'pagination_summary_text';
