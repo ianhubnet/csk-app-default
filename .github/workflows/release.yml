@@ -4,6 +4,8 @@ on:
   push:
     tags:
       - '*'
+      - '!*alpha*'
+      - '!*beta*'
 
 permissions:
   contents: write # Needed for creating releases
