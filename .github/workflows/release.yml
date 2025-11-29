@@ -16,24 +16,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      # 1. Checkout code
+      - name: 1️⃣ Checkout code
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Set up variables
+      # 2. Set up variables
+      - name: 2️⃣ Set up variables
         id: vars
         run: |
           TAG_NAME=${GITHUB_REF#refs/tags/}
-          REPO_NAME=$(basename "${GITHUB_REPOSITORY}")
-          STRIP="${{ vars.CSK_STRIP }}"
-          NAME=${REPO_NAME#"$STRIP"}
-          ZIP_NAME="${REPO_NAME}-${TAG_NAME}.zip"
+          NAME="${{ vars.CSK_NAME }}"
+          ZIP_NAME="${NAME}-${TAG_NAME}.zip"
           echo "tag=$TAG_NAME" >> $GITHUB_OUTPUT
           echo "name=$NAME" >> $GITHUB_OUTPUT
           echo "zip=$ZIP_NAME" >> $GITHUB_OUTPUT
 
-      - name: Prepare ZIP contents
+      # 3. Prepare ZIP contents
+      - name: 3️⃣ Prepare ZIP contents
         run: |
           mkdir "${{ steps.vars.outputs.name }}"
           rsync -av --exclude='.git' \
@@ -50,12 +51,27 @@ jobs:
                     --exclude="${{ steps.vars.outputs.name }}" \
                     ./ "${{ steps.vars.outputs.name }}"
 
-      - name: Create ZIP archive
+      # 4. Create ZIP archive
+      - name: 4️⃣ Create ZIP archive
         run: |
           zip -r "${{ steps.vars.outputs.zip }}" "${{ steps.vars.outputs.name }}"
 
-      - name: Create GitHub Release and Upload ZIP
+      # 5. Create GitHub Release and Upload ZIP
+      - name: 5️⃣ Create GitHub Release and Upload ZIP
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.vars.outputs.tag }}
           files: ${{ steps.vars.outputs.zip }}
+
+      # 6. Notify csk-projects
+      - name: 6️⃣ Trigger update on csk-projects
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.CSK_PAT }}
+          repository: ianhubnet/csk-projects
+          event-type: update-submodules
+          client-payload: |
+            {
+              "name": "${{ vars.CSK_NAME }}",
+              "repo": "${{ github.repository }}"
+            }
