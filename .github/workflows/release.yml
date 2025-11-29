@@ -1,4 +1,4 @@
-name: Release Package
+name: Release and Dispatch
 
 on:
   push:
@@ -8,10 +8,10 @@ on:
       - '!*beta*'
 
 permissions:
-  contents: write # Needed for creating releases
+  contents: write
 
 jobs:
-  build:
+  release:
     name: Package and Release
     runs-on: ubuntu-latest
 
@@ -63,8 +63,13 @@ jobs:
           tag_name: ${{ steps.vars.outputs.tag }}
           files: ${{ steps.vars.outputs.zip }}
 
-      # 6. Notify csk-projects
-      - name: 6️⃣ Trigger update on csk-projects
+  dispatch:
+    name: Notify Projects
+    runs-on: ubuntu-latest
+    needs: release
+
+    steps:
+      - name: Trigger update
         uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.CSK_PAT }}
