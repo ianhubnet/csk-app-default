@@ -106,7 +106,10 @@ const APP_REPO = 'ianhubnet/csk-app-default';
 |    class with `Autoloader::add_class('Hub_test', APPPATH.'libraries/Hub/drivers/Hub_test.php')`.
 |
 */
-// Platform::add_drivers('test');
+// once_filter('hub_drivers', function ($drivers) {
+// 	array_push($drivers, 'example');
+// 	return $drivers;
+// });
 
 /*
 |--------------------------------------------------------------------------
@@ -114,12 +117,20 @@ const APP_REPO = 'ianhubnet/csk-app-default';
 |--------------------------------------------------------------------------
 |
 | If you wish to register a URI rewrite rule that will redirect the user to
-| the appropriate URI, you can use `Platform::add_rewrite()`.
+| the appropriate URI, you can use `rewrite_rules` filter.
 |
-| Example: `Platform::add_rewrite('blog_category', 'blog/category');`.
+| Example:
+|
+| once_filter('rewrite_rules', function ($rules) {
+|      $rules['blog_category'] = 'blog/category';
+|      return $rules;
+| });
 |
 | In the example above, if the user visits `/blog_category/gaming` for example
 | they will be redirected to `blog/category/gaming`.
 |
 */
-// Platform::add_rewrite('blog_category', 'blog/category');
+// once_filter('rewrite_rules', function ($rules) {
+// 	$rules['blog_category'] = 'blog/category';
+// 	return $rules;
+// });
