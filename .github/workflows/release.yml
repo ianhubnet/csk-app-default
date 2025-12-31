@@ -12,71 +12,8 @@ permissions:
 
 jobs:
   release:
-    name: Package and Release
-    runs-on: ubuntu-latest
-
-    steps:
-      # 1. Checkout code
-      - name: 1️⃣ Checkout code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      # 2. Set up variables
-      - name: 2️⃣ Set up variables
-        id: vars
-        run: |
-          TAG_NAME=${GITHUB_REF#refs/tags/}
-          NAME="${{ vars.CSK_NAME }}"
-          ZIP_NAME="${NAME}-${TAG_NAME}.zip"
-          echo "tag=$TAG_NAME" >> $GITHUB_OUTPUT
-          echo "name=$NAME" >> $GITHUB_OUTPUT
-          echo "zip=$ZIP_NAME" >> $GITHUB_OUTPUT
-
-      # 3. Prepare ZIP contents
-      - name: 3️⃣ Prepare ZIP contents
-        run: |
-          mkdir "${{ steps.vars.outputs.name }}"
-          rsync -av --exclude='.git' \
-                    --exclude='.github' \
-                    --exclude='.gitdocs' \
-                    --exclude='.dev' \
-                    --exclude='.gitignore' \
-                    --exclude='.gitattributes' \
-                    --exclude='.editorconfig' \
-                    --exclude='.gitmodules' \
-                    --exclude='CITATION.cff' \
-                    --exclude='project.yml' \
-                    --exclude='*.todolist' \
-                    --exclude="${{ steps.vars.outputs.name }}" \
-                    ./ "${{ steps.vars.outputs.name }}"
-
-      # 4. Create ZIP archive
-      - name: 4️⃣ Create ZIP archive
-        run: |
-          zip -r "${{ steps.vars.outputs.zip }}" "${{ steps.vars.outputs.name }}"
-
-      # 5. Create GitHub Release and Upload ZIP
-      - name: 5️⃣ Create GitHub Release and Upload ZIP
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: ${{ steps.vars.outputs.tag }}
-          files: ${{ steps.vars.outputs.zip }}
-
-  dispatch:
-    name: Notify Projects
-    runs-on: ubuntu-latest
-    needs: release
-
-    steps:
-      - name: Trigger update
-        uses: peter-evans/repository-dispatch@v3
-        with:
-          token: ${{ secrets.CSK_PAT }}
-          repository: ianhubnet/csk-projects
-          event-type: update-submodules
-          client-payload: |
-            {
-              "name": "${{ vars.CSK_NAME }}",
-              "repo": "${{ github.repository }}"
-            }
+    uses: ianhubnet/csk-release/.github/workflows/project.yml@main
+    with:
+      name: ${{ vars.CSK_NAME }}
+    secrets:
+      token: ${{ secrets.CSK_PAT }}
