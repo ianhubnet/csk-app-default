@@ -11,11 +11,12 @@
  *   - packages  : Array of package paths.
  *   - libraries : Array of library names.
  *   - drivers   : Array of drivers.
- *   - helper    : Array of helper files.
+ *   - helpers    : Array of helper files.
  *   - config    : Array of custom config files.
  *   - language  : Array of language files (these are always deferred
  *                 until the active language has been determined).
- *   - model     : Array of models.
+ *   - models     : Array of models.
+ *   - services   : Array of services.
  *
  * NOTE: Language files are *always* loaded later in the process,
  * after the application locale has been set. No special handling
@@ -69,18 +70,27 @@ $autoload['drivers'] = [];
 |  Auto-load Helper Files
 | -------------------------------------------------------------------
 | Example:
-|  $autoload['helper'] = ['url', 'file'];
+|  $autoload['helpers'] = ['url', 'file'];
 */
-$autoload['helper'] = [];
+$autoload['helpers'] = [];
 
 /*
 | -------------------------------------------------------------------
 |  Auto-load Models
 | -------------------------------------------------------------------
 | Example:
-|  $autoload['model'] = ['first_model', 'second_model'];
+|  $autoload['models'] = ['first_model', 'second_model'];
 */
-$autoload['model'] = [];
+$autoload['models'] = [];
+
+/*
+| -------------------------------------------------------------------
+|  Auto-load Services
+| -------------------------------------------------------------------
+| Example:
+|  $autoload['service'] = ['firewall'];
+*/
+$autoload['services'] = [];
 
 /*
 | -------------------------------------------------------------------
