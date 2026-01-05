@@ -8,7 +8,7 @@
 | Used to track app status and possibly check for updates.
 |
 */
-const APP_VERSION = '0.0.1';
+const APP_VERSION = '0.0.2';
 const APP_REPO = 'https://github.com/ianhubnet/csk-app-default';
 
 /*
@@ -133,4 +133,44 @@ const APP_REPO = 'https://github.com/ianhubnet/csk-app-default';
 // once_filter('rewrite_rules', function ($rules) {
 // 	$rules['blog_category'] = 'blog/category';
 // 	return $rules;
+// });
+
+/*
+|--------------------------------------------------------------------------
+| Application Website Settings
+|--------------------------------------------------------------------------
+|
+| The `settings_tab_app` filter allows the application to define its own
+| core website-related settings (for example: address, phone number, etc.)
+| that will appear under the "Website" tab in the admin dashboard.
+|
+| This filter is optional. The "Website" tab will be displayed as long as
+| at least one component (application, module, plugin, or theme) contributes
+| fields via either:
+|
+| - `settings_tab_app`        (application-owned settings)
+| - `app_settings_fields`    (extension-contributed settings)
+|
+| Registering this filter in the application is recommended when the app
+| wants to explicitly define or reserve website-level settings, even if
+| no fields are currently needed.
+|
+| IMPORTANT:
+| - Use `add_filter()` instead of `once_filter()`.
+|   The filter must remain registered for the entire request lifecycle so
+|   that CiSkeleton can both:
+|     - collect fields during tab preparation
+|     - detect the hook during sub-menu rendering
+|
+| Example:
+|
+| add_filter('settings_tab_app', function ($fields, $ci) {
+|     $fields[] = 'site_address';
+|     $fields[] = 'site_phone';
+|     return $fields;
+| });
+|
+*/
+// add_filter('settings_tab_app', function ($fields, $ci) {
+// 	return $fields;
 // });
