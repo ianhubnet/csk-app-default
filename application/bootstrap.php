@@ -8,7 +8,7 @@
 | Used to track app status and possibly check for updates.
 |
 */
-const APP_VERSION = '0.0.2';
+const APP_VERSION = '0.0.1';
 const APP_REPO = 'https://github.com/ianhubnet/csk-app-default';
 
 /*
