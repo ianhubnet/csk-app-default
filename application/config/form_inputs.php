@@ -12,7 +12,7 @@
  *     echo print_input($username, ['class' => 'form-control']);
  *
  * @package    App\Config
+ * @category   Forms\Inputs
  * @author     Kader Bouyakoub <bkader[at]mail[dot]com>
- * @copyright  Copyright (c) 2025, Kader Bouyakoub
- * @since      1.33
+ * @copyright  Copyright (c) 2026, Kader Bouyakoub
  */
