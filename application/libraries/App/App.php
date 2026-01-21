@@ -20,7 +20,7 @@
 final class CI_App extends CI_Driver_Library
 {
 	/**
-	 * Reference to the CodeIgniter super-object.
+	 * Reference to the CI super-object.
 	 *
 	 * Used to access loaders, hooks, config, and other shared services.
 	 *

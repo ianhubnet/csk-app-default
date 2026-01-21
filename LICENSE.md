@@ -2,7 +2,7 @@
 
 **Copyright © 2025 Ianhub™. All rights reserved.**
 
-This application is a **commercial product** built on top of the proprietary CodeIgniter Skeleton (CSK) framework.
+This application is a **commercial product** built on top of the proprietary CiSkeleton (CSK) framework.
 
 By purchasing, downloading, installing, or using this application, you ("Licensee") agree to be bound by the terms of this Agreement.
 

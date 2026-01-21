@@ -153,7 +153,7 @@ AddDefaultCharset utf-8
 
 	# NOTICE: If you get a 404 play with combinations of the following commented out lines
 	#AllowOverride All
-	#RewriteBase /wherever/CodeIgniter/is
+	#RewriteBase /wherever/CiSkeleton/is
 
 	# Make sure directory listing is disabled
 	Options +FollowSymLinks -Indexes

@@ -12,7 +12,7 @@ version: 0.1
 tags: [csk, codeigniter, boilerplate, starter, template, ianhub]
 
 description: >
-  The default CSK starter application. Used as a base for building new CodeIgniter Skeleton (CSK) projects.
+  The default CSK starter application. Used as a base for building new CiSkeleton (CSK) projects.
 
 long_description: >
   This is the official boilerplate application for CSK. It includes a minimal working setup with
@@ -53,7 +53,7 @@ contributors:
 
 # ────────────── Dependencies ──────────────
 dependencies:
-  - name: CI Skeleton Core
+  - name: CiSkeleton Core
     url: https://github.com/ianhubnet/csk-core
   - name: CI Shared Assets
     url: https://github.com/ianhubnet/csk-common

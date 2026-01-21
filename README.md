@@ -1,6 +1,6 @@
 # 🧰 CSK App Default
 
-The **default application template** for [CodeIgniter Skeleton (CSK)](https://github.com/ianhubnet).
+The **default application template** for [CiSkeleton (CSK)](https://github.com/ianhubnet).
 
 This repository serves as a **boilerplate** to kickstart new CSK-based projects — already configured with CSK conventions, folder structure, autoloading, and environment setup.
 
@@ -36,4 +36,4 @@ cd csk-app-name
 
 ---
 
-> This repository is public for demonstration purposes only — it requires the private **CSK Core** to function.
+> This repository is public for demonstration purposes only — it requires the private **CiSkeleton Core** to function.
