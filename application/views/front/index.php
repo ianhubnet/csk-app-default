@@ -11,7 +11,7 @@
 				<?= sline('front_home_p4', 'platform_name', Platform::WIKI_URL) ?>
 			</p>
 			<p class="mb-0">
-				<?= sline('front_home_footer', '{elapsed_time}', CI_VERSION, CSK_VERSION) ?>
+				<?= sline('front_home_footer', '{elapsed_time}') ?>
 			</p>
 		</div>
 	</div><!--/.col-->
