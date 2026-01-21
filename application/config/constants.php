@@ -19,15 +19,6 @@
 // --------------------------------------------------------------------
 
 /**
- * The default controller to use if none is set in config.
- *
- * @var string
- */
-const APP_BASE = 'welcome';
-
-// --------------------------------------------------------------------
-
-/**
  * CookieKey
  *
  * Final implementation of {@see CookieKeyInterface}.

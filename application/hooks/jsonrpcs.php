@@ -49,6 +49,6 @@
  * @package    Aoo\Hooks
  * @category   JSON-RPC
  * @author     Kader Bouyakoub <bkader[at]mail[dot]com>
- * @copyright  Copyright (c) 2025, Kader Bouyakoub
- * @since      1.0
+ * @copyright  Copyright (c) 2026, Kader Bouyakoub
+ * @since      0.0.1
  */
