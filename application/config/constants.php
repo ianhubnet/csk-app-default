@@ -16,8 +16,6 @@
  * @since       2.18
  */
 
-// --------------------------------------------------------------------
-
 /**
  * CookieKey
  *
@@ -65,22 +63,20 @@ final class SessionKey implements SessionKeyInterface
  * Example: restricting dashboard access
  *
  * ```php
- * UserLevel::ACP = UserLevel::AUTHOR;
+ * UserLevel::ACP = UserLevel::STAFF;
  * ```
  *
  * Controllers can also restrict access via the `$class_level` property:
  *
  * ```php
- * protected $class_level = UserLevel::EDITOR;
+ * protected $class_level = UserLevel::STAFF;
  * ```
  *
  * ---
  * Default role mapping:
  *
- * - UserLevel::REGULAR → 1 (Regular user)
- * - UserLevel::AUTHOR  → 10 (Can create content)
- * - UserLevel::EDITOR  → 20 (Can edit others' content)
- * - UserLevel::MANAGER → 30 (Content/user management)
+ * - UserLevel::REGULAR → 1  (Regular user)
+ * - UserLevel::STAFF   → 30 (Content/user management)
  * - UserLevel::ADMIN   → 40 (Administrative privileges)
  * - UserLevel::OWNER   → 50 (Full unrestricted access)
  *
@@ -99,7 +95,7 @@ final class UserLevel implements UserLevelInterface
 	 *
 	 * @var int
 	 */
-	public const ACP = self::AUTHOR;
+	public const ACP = self::STAFF;
 
 	/**
 	 * Minimum access level required to bypass demo mode restrictions.
@@ -125,9 +121,7 @@ final class UserLevel implements UserLevelInterface
 	public static $labels = [
 		// Core-reserved role labels (do not touch)
 		self::REGULAR => 'role_regular',
-		self::AUTHOR => 'role_author',
-		self::EDITOR => 'role_editor',
-		self::MANAGER => 'role_manager',
+		self::STAFF => 'role_staff',
 		self::ADMIN => 'role_admin',
 		self::OWNER => 'role_owner',
 		// Application-specific role labels (add your below)
