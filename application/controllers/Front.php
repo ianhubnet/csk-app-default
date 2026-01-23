@@ -25,7 +25,7 @@ final class Front extends Public_Controller
 	 *
 	 * @var string|null
 	 */
-	public $layout = 'clean';
+	protected $layout = 'clean';
 
 	/**
 	 * Methods executed before the requested controller method.
