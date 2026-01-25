@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   release:
-    uses: ianhubnet/csk-release/.github/workflows/project.yml@main
+    uses: ianhubnet/.github/.github/workflows/project.yml@main
     with:
       name: ${{ vars.CSK_NAME }}
     secrets:
