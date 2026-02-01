@@ -5,6 +5,6 @@ authors:
   family-names: "Bouyakoub"
   orcid: "https://orcid.org/0000-0002-1184-8061"
 title: "CiSkeleton - Default Application"
-version: 1.0
+version: 0.0.1
 date-released: 2025-05-19
 url: "https://github.com/ianhubnet/csk-app-default"
