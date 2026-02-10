@@ -7,33 +7,29 @@ _dev
 .phpintel
 
 # Ignore some app config files
-/application/config/.environment
-/application/config/.installed
-/application/config/.options.cache.php
-/application/config/**/base_controller.php
-/application/config/**/config.php
-/application/config/**/database.php
-/application/config/**/language.php
-/application/config/**/trusted_hosts.php
+/src/config/.environment
+/src/config/.installed
+/src/config/.options.cache.php
+/src/config/**/base_controller.php
+/src/config/**/config.php
+/src/config/**/database.php
+/src/config/**/language.php
+/src/config/**/trusted_hosts.php
 
 # Ignore all modules installed in app directory
 # See: ianhubnet/csk-packages/tree/main/packages/modules
-/application/modules/*
-!/application/modules/
+/src/modules/*
+!/src/modules/
 
 # Ignore all plugins installed in app directory
 # See: ianhubnet/csk-packages/tree/main/packages/plugins
-/application/plugins/*
-!/application/plugins/
+/src/plugins/*
+!/src/plugins/
 
 # Ignore all files in storage except needed ones
-/application/storage/*
-!/application/storage/dist/
-!/application/storage/data/
-
-#=== PUBLIC FOLDER ===#
-# Keep everything in public/
-!/public/**
+/src/storage/*
+!/src/storage/dist/
+!/src/storage/data/
 
 # Ignore dependency directory
 /vendor/
