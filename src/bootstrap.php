@@ -174,3 +174,48 @@ const APP_REPO = 'https://github.com/ianhubnet/csk-app-default';
 // add_filter('settings_tab_app', function ($fields, $ci) {
 // 	return $fields;
 // });
+
+/*
+|--------------------------------------------------------------------------
+| Default Homepage Routes
+|--------------------------------------------------------------------------
+|
+| CiSkeleton uses the `default_controller` configuration value to determine
+| which page is shown when visitors access the root URL of the website.
+|
+| The `default_controller` filter allows the application to define which
+| routes can be used as the website homepage.
+|
+| While the active homepage is selected from the admin dashboard, applications,
+| and modules may declare which routes are allowed to be used as homepage candidates.
+|
+| Each value represents a route in the form:
+|
+|     controller
+|     controller/method
+|     module/controller/method
+|
+| Examples:
+| - 'front'        → Front
+| - 'store'        → Store
+| - 'store/cart'   → Store » Cart
+|
+| Notes:
+| - The default 'front' controller is always available.
+| - This filter defines *available choices*, not the active value.
+| - Modules may also contribute routes using the same filter.
+|
+| This filter is executed only once during settings preparation.
+|
+| Example:
+|
+| once_filter('default_controller', function ($routes, $ci) {
+|     $routes[] = 'store';
+|     $routes[] = 'store/featured';
+|     return $routes;
+| });
+|
+*/
+// once_filter('default_controller', function ($routes, $ci) {
+// 	return $routes;
+// });
