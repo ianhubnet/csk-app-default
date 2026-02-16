@@ -74,7 +74,7 @@ return [
 		'items' => [
 			// Ianhub website.
 			[
-				'title' => '<i class="fa fa-fw fa-globe"></i>',
+				'title' => '<i class="fas fa-fw fa-globe"></i>',
 				'href' => Platform::SITE_URL,
 				'attrs' => ['rel' => 'external', 'target' => '_blank']
 			],
