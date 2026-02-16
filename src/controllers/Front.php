@@ -51,8 +51,8 @@ final class Front extends Public_Controller
 	/**
 	 * Homepage - Index Page for this controller.
 	 *
-	 * Since this controller is set as the default controller in
-	 * `config/base_controller.php`, it is used as homepage.
+	 * This controller is used as homepage because the default
+	 * controller upon installation is set to `front`.
 	 *
 	 * @return void
 	 */
