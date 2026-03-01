@@ -63,7 +63,7 @@ $autoload['libraries'] = [];
 | Example:
 |  $autoload['drivers'] = ['cache'];
 */
-$autoload['drivers'] = [];
+$autoload['drivers'] = ['app'];
 
 /*
 | -------------------------------------------------------------------

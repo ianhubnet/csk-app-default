@@ -90,29 +90,6 @@ const APP_REPO = 'https://github.com/ianhubnet/csk-app-default';
 
 /*
 |--------------------------------------------------------------------------
-| Hub Drivers Registration
-|--------------------------------------------------------------------------
-|
-| The core driver in CiSkeleton is `CI_Hub`. It is an all-in-one driver that
-| makes the heart of the framework and gives you all what you need to get started.
-|
-| If you wish to add extra drivers from the application side, simply make sure
-| to have `libraries/Hub/drivers/` directory, inside which you create as many
-| drivers as you want. In the example below, we are registering a driver called
-| 'test', so in order for this to work:
-| 1. We need the file: `libraries/Hub/drivers/Hub_test.php`.
-| 2. We need the class `Hub_test extends CI_Driver` (or even `CI_Hub_test`).
-| 3. Optional: To speed up class lookup, do not forget to register the driver's
-|    class with `Autoloader::add_class('Hub_test', APPPATH.'libraries/Hub/drivers/Hub_test.php')`.
-|
-*/
-// once_filter('hub_drivers', function ($drivers) {
-// 	array_push($drivers, 'example');
-// 	return $drivers;
-// });
-
-/*
-|--------------------------------------------------------------------------
 | Request Rewrites
 |--------------------------------------------------------------------------
 |
