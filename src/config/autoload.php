@@ -113,4 +113,4 @@ $autoload['services'] = [];
 | These are always deferred internally until the active
 | language has been determined.
 */
-$autoload['language'] = ['app', 'admin/app' => CI_ADMIN];
+$autoload['language'] = [];
