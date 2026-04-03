@@ -11,17 +11,17 @@
  * ```php
  * // Registration:
  * $config['account/password'] = [
- *     [
+ *     'opassword' => [
  *         'field' => 'opassword',
  *         'label' => 'lang:current_password',
  *         'rules' => '...'
  *     ],
- *     [
+ *     'npassword' => [
  *         'field' => 'npassword',
  *         'label' => 'lang:new_password',
  *         'rules' => '...'
  *     ],
- *     [
+ *     'cpassword' => [
  *         'field' => 'cpassword',
  *         'label' => 'lang:confirm_password',
  *         'rules' => '...'
