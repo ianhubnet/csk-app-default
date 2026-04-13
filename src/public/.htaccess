@@ -120,6 +120,11 @@ AddDefaultCharset utf-8
 # period. This includes directories used by version control systems such as
 # Subversion or Git.
 <IfModule mod_rewrite.c>
+	# Allow SSL validation files first
+	RewriteCond %{REQUEST_URI} ^/\.well-known/
+	RewriteRule ^ - [L]
+
+	# Then block other hidden files
 	RewriteCond %{SCRIPT_FILENAME} -d [OR]
 	RewriteCond %{SCRIPT_FILENAME} -f
 	RewriteRule "(^|/)\." - [F]
