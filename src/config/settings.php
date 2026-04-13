@@ -26,7 +26,6 @@
  *     'label'  => string (language key),
  *     'icon'   => string (UI icon definition),
  *     'help'   => string|null,
- *     'donate' => string|null,
  *     'fields' => [
  *         'option_key' => [
  *             'type'     => string,
