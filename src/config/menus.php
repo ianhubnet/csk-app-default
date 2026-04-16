@@ -49,6 +49,12 @@ return [
 			],
 
 			[
+				'title' => 'lang:forums',
+				'href'  => 'forums',
+				'show_if' => ['module' => 'forums'],
+			],
+
+			[
 				'title' => 'lang:contact_us',
 				'href'  => 'contact',
 				'show_if' => ['module' => 'contact'],
