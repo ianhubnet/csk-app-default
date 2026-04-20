@@ -39,33 +39,6 @@ const APP_REPO = 'https://github.com/ianhubnet/csk-app-default';
 
 /*
 |--------------------------------------------------------------------------
-| Autoloader Class Registration
-|--------------------------------------------------------------------------
-|
-| In order to speed up class loading and usage, it is advised to add your
-| application classes to `Autoloader`.
-|
-| Examples:
-| 1. Registering a single class:
-|     Autoloader::add_class('MyClass', __DIR__.'/core/MyClass.php');
-|
-| 2. Registering multiple classes:
-|     Autoloader::add_classes([
-|         'MyClass1' => __DIR__.'/MyClass1.php',
-|         'MyClass2' => APPPATH.'/core/MyClass2.php',
-|     ]);
-|
-| Both methods of registering classes accept an additional argument that is used
-| to conditionally register classes. In the example below, we want to register
-| a new class but only for the admin area of the application:
-|
-|     Autoloader::add_class('MyAdminClass', __DIR__.'/MyAdminClass.php', CI_ADMIN);
-|
-*/
-// Autoloader::add_classes([]);
-
-/*
-|--------------------------------------------------------------------------
 | Hooks (Actions & Filters)
 |--------------------------------------------------------------------------
 |
