@@ -14,7 +14,7 @@
  * @package     App\Libraries
  * @subpackage  Drivers
  * @author      Kader Bouyakoub <bkader[at]mail[dot]com>
- * @copyright   Copyright (c) 2025, Kader Bouyakoub
+ * @copyright   Copyright (c) 2018-present, Kader Bouyakoub
  */
 
 final class CI_App extends CI_Driver_Library

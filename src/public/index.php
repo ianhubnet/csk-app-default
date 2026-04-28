@@ -11,8 +11,7 @@
  *
  * @package    CiSkeleton
  * @author     Kader Bouyakoub <bkader[at]mail[dot]com>
- * @copyright  Copyright (c) 2025, Kader Bouyakoub
- * @link       https://github.com/bkader/skeleton
+ * @copyright  Copyright (c) 2018-present, Kader Bouyakoub
  */
 
 ob_start(); // Start output buffering to ensure headers can be sent later.

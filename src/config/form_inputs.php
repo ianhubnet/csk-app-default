@@ -14,5 +14,5 @@
  * @package    App\Config
  * @category   Forms\Inputs
  * @author     Kader Bouyakoub <bkader[at]mail[dot]com>
- * @copyright  Copyright (c) 2026, Kader Bouyakoub
+ * @copyright  Copyright (c) 2018-present, Kader Bouyakoub
  */

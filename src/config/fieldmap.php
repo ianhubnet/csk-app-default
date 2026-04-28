@@ -9,5 +9,5 @@
  * @package    App\Controllers
  * @category   Configuration
  * @author     Kader Bouyakoub <bkader[at]mail[dot]com>
- * @copyright  Copyright (c) 2026, Kader Bouyakoub
+ * @copyright  Copyright (c) 2018-present, Kader Bouyakoub
  */
