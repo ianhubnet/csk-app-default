@@ -16,3 +16,8 @@
 
 $lang['menu_main'] = 'முதன்மை மெனு';
 $lang['menu_social'] = 'சமூக மெனு';
+
+// Translated menu locations:
+$lang['menu_loc_main'] = 'முதன்மை மெனு';
+$lang['menu_loc_footer'] = 'அடிக்குறிப்பு மெனு';
+$lang['menu_loc_sidebar'] = 'பக்கப்பட்டி மெனு';

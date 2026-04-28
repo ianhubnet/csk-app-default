@@ -21,3 +21,9 @@
 // $lang['config:site_name'] = Platform::LABEL;
 // $lang['config:site_description'] = Platform::SLOGAN;
 // $lang['config:site_author'] = Platform::AUTHOR;
+
+// --------------------------------------------------------------------
+// Sidebar Content:
+// --------------------------------------------------------------------
+$lang['sidebar_heading'] = 'மொழிபெயர்க்கப்பட்ட தலைப்பு';
+$lang['sidebar_content'] = 'இயல்புநிலை தீம் பக்கப்பட்டி';

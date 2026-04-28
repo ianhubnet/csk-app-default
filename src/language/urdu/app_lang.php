@@ -21,3 +21,9 @@
 // $lang['config:site_name'] = Platform::LABEL;
 // $lang['config:site_description'] = Platform::SLOGAN;
 // $lang['config:site_author'] = Platform::AUTHOR;
+
+// --------------------------------------------------------------------
+// Sidebar Content:
+// --------------------------------------------------------------------
+$lang['sidebar_heading'] = 'ترجمہ شدہ سرخی';
+$lang['sidebar_content'] = 'پہلے سے طے شدہ تھیم سائڈبار';

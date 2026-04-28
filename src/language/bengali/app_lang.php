@@ -21,3 +21,9 @@
 // $lang['config:site_name'] = Platform::LABEL;
 // $lang['config:site_description'] = Platform::SLOGAN;
 // $lang['config:site_author'] = Platform::AUTHOR;
+
+// --------------------------------------------------------------------
+// Sidebar Content:
+// --------------------------------------------------------------------
+$lang['sidebar_heading'] = 'অনুবাদিত শিরোনাম';
+$lang['sidebar_content'] = 'ডিফল্ট থিম সাইডবার';

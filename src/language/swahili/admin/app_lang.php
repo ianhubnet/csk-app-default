@@ -16,3 +16,8 @@
 
 $lang['menu_main'] = 'Menyu Kuu';
 $lang['menu_social'] = 'Menyu ya Kijamii';
+
+// Translated menu locations:
+$lang['menu_loc_main'] = 'Menyu Kuu';
+$lang['menu_loc_footer'] = 'Menyu ya Chini';
+$lang['menu_loc_sidebar'] = 'Menyu ya Upande';

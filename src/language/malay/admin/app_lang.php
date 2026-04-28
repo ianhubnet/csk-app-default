@@ -16,3 +16,8 @@
 
 $lang['menu_main'] = 'Menu Utama';
 $lang['menu_social'] = 'Menu Sosial';
+
+// Translated menu locations:
+$lang['menu_loc_main'] = 'Menu Utama';
+$lang['menu_loc_footer'] = 'Menu Kaki';
+$lang['menu_loc_sidebar'] = 'Menu Sisi';

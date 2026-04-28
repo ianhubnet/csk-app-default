@@ -16,3 +16,8 @@
 
 $lang['menu_main'] = 'Főmenü';
 $lang['menu_social'] = 'Közösségi menü';
+
+// Translated menu locations:
+$lang['menu_loc_main'] = 'Főmenü';
+$lang['menu_loc_footer'] = 'Lábléc menü';
+$lang['menu_loc_sidebar'] = 'Oldalsáv menü';

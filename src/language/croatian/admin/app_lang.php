@@ -16,3 +16,8 @@
 
 $lang['menu_main'] = 'Glavni izbornik';
 $lang['menu_social'] = 'Društveni izbornik';
+
+// Translated menu locations:
+$lang['menu_loc_main'] = 'Glavni izbornik';
+$lang['menu_loc_footer'] = 'Izbornik podnožja';
+$lang['menu_loc_sidebar'] = 'Bočni izbornik';

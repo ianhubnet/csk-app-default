@@ -16,3 +16,8 @@
 
 $lang['menu_main'] = 'Menu Chính';
 $lang['menu_social'] = 'Menu Mạng Xã Hội';
+
+// Translated menu locations:
+$lang['menu_loc_main'] = 'Menu Chính';
+$lang['menu_loc_footer'] = 'Menu Chân Trang';
+$lang['menu_loc_sidebar'] = 'Menu Thanh Bên';

@@ -16,3 +16,8 @@
 
 $lang['menu_main'] = 'مین مینو';
 $lang['menu_social'] = 'سماجی مینو';
+
+// Translated menu locations:
+$lang['menu_loc_main'] = 'مین مینو';
+$lang['menu_loc_footer'] = 'فوٹر مینو';
+$lang['menu_loc_sidebar'] = 'سائڈبار مینو';

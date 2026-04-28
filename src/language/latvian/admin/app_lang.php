@@ -16,3 +16,8 @@
 
 $lang['menu_main'] = 'Galvenā izvēlne';
 $lang['menu_social'] = 'Sociālā izvēlne';
+
+// Translated menu locations:
+$lang['menu_loc_main'] = 'Galvenā izvēlne';
+$lang['menu_loc_footer'] = 'Kājenes izvēlne';
+$lang['menu_loc_sidebar'] = 'Sānjoslas izvēlne';

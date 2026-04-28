@@ -16,3 +16,8 @@
 
 $lang['menu_main'] = 'Hoofdmenu';
 $lang['menu_social'] = 'Sociaal menu';
+
+// Translated menu locations:
+$lang['menu_loc_main'] = 'Hoofdmenu';
+$lang['menu_loc_footer'] = 'Voetmenu';
+$lang['menu_loc_sidebar'] = 'Zijbalkmenu';

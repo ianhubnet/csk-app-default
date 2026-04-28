@@ -16,3 +16,8 @@
 
 $lang['menu_main'] = 'Meniu principal';
 $lang['menu_social'] = 'Meniu social';
+
+// Translated menu locations:
+$lang['menu_loc_main'] = 'Meniu principal';
+$lang['menu_loc_footer'] = 'Meniu subsol';
+$lang['menu_loc_sidebar'] = 'Meniu bară laterală';

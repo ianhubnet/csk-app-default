@@ -16,3 +16,8 @@
 
 $lang['menu_main'] = 'Huvudmeny';
 $lang['menu_social'] = 'Socia Menu';
+
+// Translated menu locations:
+$lang['menu_loc_main'] = 'Huvudmeny';
+$lang['menu_loc_footer'] = 'Sidfotsmeny';
+$lang['menu_loc_sidebar'] = 'Sidomenyn';

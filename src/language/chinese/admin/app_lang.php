@@ -16,3 +16,8 @@
 
 $lang['menu_main'] = '主菜单';
 $lang['menu_social'] = '社交菜单';
+
+// Translated menu locations:
+$lang['menu_loc_main'] = '主菜单';
+$lang['menu_loc_footer'] = '页脚菜单';
+$lang['menu_loc_sidebar'] = '侧边栏菜单';

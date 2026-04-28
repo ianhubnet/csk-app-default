@@ -16,3 +16,8 @@
 
 $lang['menu_main'] = 'Pagrindinis meniu';
 $lang['menu_social'] = 'Socialinis meniu';
+
+// Translated menu locations:
+$lang['menu_loc_main'] = 'Pagrindinis meniu';
+$lang['menu_loc_footer'] = 'Poraštės meniu';
+$lang['menu_loc_sidebar'] = 'Socialinis meniu';

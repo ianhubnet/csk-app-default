@@ -16,3 +16,8 @@
 
 $lang['menu_main'] = 'Ana Menü';
 $lang['menu_social'] = 'Sosyal Menü';
+
+// Translated menu locations:
+$lang['menu_loc_main'] = 'Ana Menü';
+$lang['menu_loc_footer'] = 'Alt Menü';
+$lang['menu_loc_sidebar'] = 'Kenar Çubuğu Menüsü';

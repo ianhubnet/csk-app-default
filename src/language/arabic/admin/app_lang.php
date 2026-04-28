@@ -16,3 +16,8 @@
 
 $lang['menu_main'] = 'القائمة الرئيسية';
 $lang['menu_social'] = 'قائمة التواصل الاجتماعي';
+
+// Translated menu locations:
+$lang['menu_loc_main'] = 'القائمة الرئيسية';
+$lang['menu_loc_footer'] = 'قائمة أسفل الصفحة';
+$lang['menu_loc_sidebar'] = 'القائمة الجانبية';

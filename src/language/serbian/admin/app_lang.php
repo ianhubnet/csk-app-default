@@ -16,3 +16,8 @@
 
 $lang['menu_main'] = 'Glavni meni';
 $lang['menu_social'] = 'Društveni meni ';
+
+// Translated menu locations:
+$lang['menu_loc_main'] = 'Glavni meni';
+$lang['menu_loc_footer'] = 'Podnožje menija';
+$lang['menu_loc_sidebar'] = 'Meni bočne trake';

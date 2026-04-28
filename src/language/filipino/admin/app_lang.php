@@ -16,3 +16,8 @@
 
 $lang['menu_main'] = 'Pangunahing Menu';
 $lang['menu_social'] = 'Menu ng Social Media';
+
+// Translated menu locations:
+$lang['menu_loc_main'] = 'Pangunahing Menu';
+$lang['menu_loc_footer'] = 'Menu ng Paa';
+$lang['menu_loc_sidebar'] = 'Menu ng Sidebar';

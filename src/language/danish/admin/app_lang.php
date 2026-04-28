@@ -16,3 +16,8 @@
 
 $lang['menu_main'] = 'Hovedmenu';
 $lang['menu_social'] = 'Social menu';
+
+// Translated menu locations:
+$lang['menu_loc_main'] = 'Hovedmenu';
+$lang['menu_loc_footer'] = 'Sidefodsmenu';
+$lang['menu_loc_sidebar'] = 'Sidebjælkemenu';

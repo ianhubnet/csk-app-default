@@ -16,3 +16,8 @@
 
 $lang['menu_main'] = 'Päävalikko';
 $lang['menu_social'] = 'Sosiaalinen valikko';
+
+// Translated menu locations:
+$lang['menu_loc_main'] = 'Päävalikko';
+$lang['menu_loc_footer'] = 'Alatunnistevalikko';
+$lang['menu_loc_sidebar'] = 'Sivuvalikko';

@@ -16,3 +16,8 @@
 
 $lang['menu_main'] = 'Κύριο μενού';
 $lang['menu_social'] = 'Κοινωνικό μενού';
+
+// Translated menu locations:
+$lang['menu_loc_main'] = 'Κύριο μενού';
+$lang['menu_loc_footer'] = 'Μενού υποσέλιδου';
+$lang['menu_loc_sidebar'] = 'Μενού πλευρικής γραμμής';

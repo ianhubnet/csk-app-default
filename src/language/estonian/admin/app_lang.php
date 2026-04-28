@@ -16,3 +16,8 @@
 
 $lang['menu_main'] = 'Peamenüü';
 $lang['menu_social'] = 'Sotsiaalmeedia menüü';
+
+// Translated menu locations:
+$lang['menu_loc_main'] = 'Peamenüü';
+$lang['menu_loc_footer'] = 'Jalamenüü';
+$lang['menu_loc_sidebar'] = 'Külgmenüü';

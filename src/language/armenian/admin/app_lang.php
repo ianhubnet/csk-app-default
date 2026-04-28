@@ -16,3 +16,8 @@
 
 $lang['menu_main'] = 'Գլխավոր մենյու';
 $lang['menu_social'] = 'Սոցիալական մենյու';
+
+// Translated menu locations:
+$lang['menu_loc_main'] = 'Գլխավոր մենյու';
+$lang['menu_loc_footer'] = 'Վերջնամասի մենյու';
+$lang['menu_loc_sidebar'] = 'Կողային մենյու';

@@ -16,3 +16,8 @@
 
 $lang['menu_main'] = 'Menu główne';
 $lang['menu_social'] = 'Menu społecznościowe';
+
+// Translated menu locations:
+$lang['menu_loc_main'] = 'Główne menu';
+$lang['menu_loc_footer'] = 'Menu stopki';
+$lang['menu_loc_sidebar'] = 'Menu boczne';

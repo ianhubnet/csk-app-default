@@ -16,3 +16,8 @@
 
 $lang['menu_main'] = 'Hlavné menu';
 $lang['menu_social'] = 'Sociálne menu';
+
+// Translated menu locations:
+$lang['menu_loc_main'] = 'Hlavné menu';
+$lang['menu_loc_footer'] = 'Menu päty';
+$lang['menu_loc_sidebar'] = 'Bočné menu';

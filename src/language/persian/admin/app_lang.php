@@ -16,3 +16,8 @@
 
 $lang['menu_main'] = 'منوی اصلی';
 $lang['menu_social'] = 'منوی اجتماعی';
+
+// Translated menu locations:
+$lang['menu_loc_main'] = 'منوی اصلی';
+$lang['menu_loc_footer'] = 'منوی پاورقی';
+$lang['menu_loc_sidebar'] = 'منوی کناری';

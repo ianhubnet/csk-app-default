@@ -16,3 +16,8 @@
 
 $lang['menu_main'] = 'Основно меню';
 $lang['menu_social'] = 'Социално меню';
+
+// Translated menu locations:
+$lang['menu_loc_main'] = 'Главно меню';
+$lang['menu_loc_footer'] = 'Долно меню';
+$lang['menu_loc_sidebar'] = 'Странична лента Меню';

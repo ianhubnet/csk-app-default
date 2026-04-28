@@ -21,3 +21,9 @@
 // $lang['config:site_name'] = Platform::LABEL;
 // $lang['config:site_description'] = Platform::SLOGAN;
 // $lang['config:site_author'] = Platform::AUTHOR;
+
+// --------------------------------------------------------------------
+// Sidebar Content:
+// --------------------------------------------------------------------
+$lang['sidebar_heading'] = 'หัวข้อด้านข้าง';
+$lang['sidebar_content'] = 'แถบด้านข้างของธีมเริ่มต้น';

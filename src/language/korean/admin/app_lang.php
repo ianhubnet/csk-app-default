@@ -16,3 +16,8 @@
 
 $lang['menu_main'] = '메인 메뉴';
 $lang['menu_social'] = '소셜 메뉴';
+
+// Translated menu locations:
+$lang['menu_loc_main'] = '메인 메뉴';
+$lang['menu_loc_footer'] = '푸터 메뉴';
+$lang['menu_loc_sidebar'] = '사이드바 메뉴';

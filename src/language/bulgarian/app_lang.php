@@ -21,3 +21,9 @@
 // $lang['config:site_name'] = Platform::LABEL;
 // $lang['config:site_description'] = Platform::SLOGAN;
 // $lang['config:site_author'] = Platform::AUTHOR;
+
+// --------------------------------------------------------------------
+// Sidebar Content:
+// --------------------------------------------------------------------
+$lang['sidebar_heading'] = 'Преведено заглавие';
+$lang['sidebar_content'] = 'Странична лента за теми по подразбиране';
