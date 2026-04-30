@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*!
- * CiSkeleton - Classic Theme
- * Copyright 2025 Kader Bouyakoub (https://github.com/bkader)
+ * CiSkeleton - Default App
+ * Copyright 2018-present Kader Bouyakoub (https://github.com/bkader)
  */
 
 html, body {
@@ -143,19 +143,6 @@ textarea {
 .footer .nav {
 	justify-content: center;
 	gap: .5rem;
-}
-
-/* === COOKIE CONSENT === */
-
-.cookie-consent {
-	position: fixed;
-	inset-block: auto 5rem;
-	text-align: justify;
-	width: 100%;
-	padding: 1rem;
-	z-index: 1030;
-	background-color: rgba(var(--bs-dark-rgb), .9);
-	color: var(--bs-white);
 }
 
 /* === PAGE 404 === */
