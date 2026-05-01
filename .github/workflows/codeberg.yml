@@ -1,0 +1,20 @@
+name: Sync Codeberg mirror
+
+on:
+  push:
+    branches:
+      - "**"
+    tags:
+      - "**"
+
+  workflow_dispatch:
+
+jobs:
+  sync:
+    uses: ianhubnet/.github/.github/workflows/mirror-to-codeberg.yml@main
+    with:
+      private: false
+      mirror_mode: mirror
+      codeberg_owner: ianhub
+    secrets:
+      CODEBERG_TOKEN: ${{ secrets.CODEBERG_TOKEN }}
