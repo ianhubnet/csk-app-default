@@ -244,8 +244,6 @@ textarea {
 
 /* === UTILITIES === */
 
-
-
 /* === MEDIA QUERIES === */
 
 /* sm and up (567px) */
@@ -266,13 +264,6 @@ textarea {
 }
 
 @media (min-width: 48rem) {
-	.cookie-consent {
-		max-inline-size: 25rem;
-		border-radius: .25rem;
-		inset-inline-end: 1rem;
-		inset-block-end: 4rem;
-	}
-
 	.footer {
 		padding-block: 1rem;
 		border-block-start: 1px solid var(--bs-gray-300);

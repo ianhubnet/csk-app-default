@@ -40,7 +40,7 @@ final class Front extends Public_Controller
 		if ($name === 'index') {
 			$this->lang->load('front/home');
 
-			$this->hooks->register('page_header', function () {
+			$this->hooks->once('page_header', function () {
 				echo $this->hub->theme->widget('home');
 			});
 		}
@@ -111,11 +111,12 @@ final class Front extends Public_Controller
 		}
 
 		// We queue 'hero' button under 'welcome' slot.
-		$this->hub->theme->add_widget('hero', [
+		$this->hub->theme->once_widget('hero', [
+			'class' => 'p-4 text-center',
 			'title' => parse_line('front_home_h1'),
 			'subtitle' => parse_line('front_home_p1'),
 			'buttons' => $buttons,
-			'image' => 'https://i.imgur.com/vlzLdhv.jpg'
+			'image' => 'https://i.imgur.com/vlzLdhv.jpg',
 		], 'home');
 	}
 
