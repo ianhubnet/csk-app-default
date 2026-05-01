@@ -33,7 +33,7 @@
 					</li>
 				<?php endif; ?>
 				<?php if ($this->user): ?>
-				<?php if ($this->user->has_dashboard): ?>
+				<?php if ($user_has_dashboard): ?>
 					<li class="nav-item"><?= anchor('admin', line('admin_panel'), 'class="nav-link"') ?></li>
 				<?php endif; ?>
 					<li class="nav-item dropdown user-menu">
@@ -41,7 +41,7 @@
 						<div class="dropdown-menu dropdown-menu-end">
 							<?php
 							// The following is hidden is maintenance mode.
-							if ($this->user->has_offline()) {
+							if ($user_has_offline) {
 								echo anchor('account', line('settings'), 'class="dropdown-item"');
 								echo '<hr class="dropdown-divider">';
 							}
