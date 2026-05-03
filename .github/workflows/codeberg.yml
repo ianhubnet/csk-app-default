@@ -14,7 +14,7 @@ jobs:
     uses: ianhubnet/.github/.github/workflows/mirror-to-codeberg.yml@main
     with:
       private: false
-      mirror_mode: mirror
+      mirror_mode: branches-tags
       codeberg_owner: ianhub
     secrets:
       CODEBERG_TOKEN: ${{ secrets.CODEBERG_TOKEN }}
