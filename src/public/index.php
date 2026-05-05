@@ -28,7 +28,7 @@ ob_start(); // Start output buffering to ensure headers can be sent later.
  * - Configures PHP error reporting
  * - Ensures compatibility with CLI and web server
  */
-(function () {
+(static function () {
 
 	/**
 	 * Normalize working directory for CLI.

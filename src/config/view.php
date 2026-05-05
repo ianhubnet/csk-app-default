@@ -21,7 +21,7 @@ if (CI_DASHBOARD) {
  * @param CI_Controller $ci
  * @return void
  */
-once_action('theme_setup', function ($ci) {
+once_action('theme_setup', static function ($ci) {
 	// Queue default dashboard font 'Fira Sans':
 	$ci->hub->assets->google_font('Fira+Sans', 'ital,wght@0,400;0,700;1,400;1,700');
 
@@ -44,7 +44,7 @@ once_action('theme_setup', function ($ci) {
  * @param  string $content
  * @return string
  */
-once_filter('extra_head', function ($content) {
+once_filter('extra_head', static function ($content) {
 	add_ie9_support($output, !CI_DEBUG);
 	return $content;
 });
@@ -56,7 +56,7 @@ once_filter('extra_head', function ($content) {
  * @param  CI_Controller $ci
  * @return string
  */
-once_filter('theme_layout', function ($layout, $ci) {
+once_filter('theme_layout', static function ($layout, $ci) {
 	// Use `clean` layout for authentication (`Auth.php` controller).
 	// if ($ci->router->is_class('auth')) {
 	// 	return 'auth';
@@ -77,7 +77,7 @@ once_filter('theme_layout', function ($layout, $ci) {
  * @param  CI_Controller $ci
  * @return void
  */
-once_action('enqueue_partials', function ($ci) {
+once_action('enqueue_partials', static function ($ci) {
 	// Default partials, queued no matter the section.
 	$ci->hub->theme
 		->once_partial('header')
@@ -99,7 +99,7 @@ once_action('enqueue_partials', function ($ci) {
  * @param  CI_Controller $ci
  * @return array
  */
-once_filter('pagination', function ($config) {
+once_filter('pagination', static function ($config) {
 	$config['full_tag_open'] = '<ul class="pagination pagination-sm pagination-centered d-flex align-items-start justify-content-center m-0">';
 	$config['full_tag_close'] = '</ul>';
 	$config['num_links'] = 2;
@@ -133,17 +133,17 @@ once_filter('pagination', function ($config) {
  * Change CAPTCHA image height, background color, border color,
  * text color, grid color, and image class.
  */
-once_filter('captcha_font_size', fn($size) => 22);
-once_filter('captcha_img_height', fn($height) => 41);
-once_filter('captcha_background_color', fn($rgb) => [255, 255, 255]);
-once_filter('captcha_border_color', fn($rgb) => [206, 212, 218, 127]);
-once_filter('captcha_text_color', fn($rgb) => [33, 37, 41]);
-once_filter('captcha_grid_color', fn($rgb) => [173, 181, 189, 50]);
-once_filter('captcha_img_class', fn($class) => 'img-fluid rounded-2');
+once_filter('captcha_font_size', static fn($size) => 22);
+once_filter('captcha_img_height', static fn($height) => 41);
+once_filter('captcha_background_color', static fn($rgb) => [255, 255, 255]);
+once_filter('captcha_border_color', static fn($rgb) => [206, 212, 218, 127]);
+once_filter('captcha_text_color', static fn($rgb) => [33, 37, 41]);
+once_filter('captcha_grid_color', static fn($rgb) => [173, 181, 189, 50]);
+once_filter('captcha_img_class', static fn($class) => 'img-fluid rounded-2');
 
 /**
  * Filters to set reCAPTCHA theme and size.
  * Only applicable if reCAPTCHA is enabled.
  */
-once_filter('recaptcha_theme', fn($theme) => 'light'); // light or dark
-once_filter('recaptcha_size', fn($size) => 'normal'); // normal or compact
+once_filter('recaptcha_theme', static fn($theme) => 'light'); // light or dark
+once_filter('recaptcha_size', static fn($size) => 'normal'); // normal or compact
