@@ -1,0 +1,29 @@
+name: Deploy Project
+run-name: Deploy ${{ github.ref_name }} by @${{ github.actor }}
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/**'
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    uses: ianhubnet/.github/.github/workflows/deploy.yml@main
+    with:
+      type: ${{ vars.CSK_TYPE }}
+      app_path: src
+      deploy_public: true
+      delete_removed: true
+      full_deploy: false
+    secrets:
+      FTP_HOST: ${{ secrets.FTP_HOST }}
+      FTP_PORT: ${{ secrets.FTP_PORT }}
+      FTP_USER: ${{ secrets.FTP_USER }}
+      FTP_PASS: ${{ secrets.FTP_PASS }}
+      FTP_PATH: ${{ secrets.FTP_PATH }}
+      FTP_PATH_PUBLIC: ${{ secrets.FTP_PATH_PUBLIC }}
