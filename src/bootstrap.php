@@ -9,6 +9,7 @@
 |
 */
 const APP_VERSION = '0.0.1';
+const APP_VERSION_ID = 1;
 const APP_REPO = 'https://github.com/ianhubnet/csk-app-default';
 
 /*

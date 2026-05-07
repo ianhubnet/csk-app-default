@@ -13,7 +13,7 @@
  * @package     App\Config
  * @author      Kader Bouyakoub <bkader[at]mail[dot]com>
  * @copyright   Copyright (c) 2018-present, Kader Bouyakoub
- * @since       2.18
+ * @since       0.0.1
  */
 
 /**
@@ -23,7 +23,7 @@
  * Exists as a convenience class to allow type-hinting against a concrete
  * implementation instead of the interface when needed.
  *
- * @since 3.9.0
+ * @since 0.0.1
  */
 final class CookieKey implements CookieKeyInterface
 {
@@ -40,7 +40,7 @@ final class CookieKey implements CookieKeyInterface
  *
  * Applications can extend this class to define custom session keys.
  *
- * @since 3.9.0
+ * @since 0.0.1
  */
 final class SessionKey implements SessionKeyInterface
 {
@@ -80,8 +80,8 @@ final class SessionKey implements SessionKeyInterface
  * - UserLevel::ADMIN   → 40 (Administrative privileges)
  * - UserLevel::OWNER   → 50 (Full unrestricted access)
  *
- * @since 2.168
- * @since 3.9.0  Implements the new `UserLevelInterface` interface.
+ * @since 0.0.1
+ * @since 0.0.1  Implements the new `UserLevelInterface` interface.
  */
 final class UserLevel implements UserLevelInterface
 {
@@ -151,7 +151,7 @@ final class UserLevel implements UserLevelInterface
  * RelationKey::OWNER;  // Returns 'owner'
  * ```
  *
- * @since 3.9.1
+ * @since 0.0.1
  */
 final class RelationKey implements RelationKeyInterface
 {
