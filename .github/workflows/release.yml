@@ -4,10 +4,10 @@ run-name: Release ${{ github.ref_name }} by @${{ github.actor }}
 on:
   push:
     tags:
-      - '*'
+      - '*.*.*'
       - '!*alpha*'
       - '!*beta*'
-      - '!*rc*'
+      - '!*+*'
 
 permissions:
   contents: write
@@ -15,6 +15,11 @@ permissions:
 
 jobs:
   release:
+    if: >
+      startsWith(github.ref, 'refs/tags/') &&
+      !contains(github.ref_name, 'alpha') &&
+      !contains(github.ref_name, 'beta') &&
+      !contains(github.ref_name, '+')
     uses: ianhubnet/.github/.github/workflows/project.yml@main
     with:
       name: ${{ vars.CSK_NAME }}
