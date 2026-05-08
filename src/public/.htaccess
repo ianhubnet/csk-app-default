@@ -151,6 +151,11 @@ AddDefaultCharset utf-8
 	Options +FollowSymLinks
 	RewriteEngine On
 
+	# Ensure Authorization headers are passed through to PHP (or other CGI) scripts.
+	#SetEnvIf Authorization "(.+)" HTTP_AUTHORIZATION=$1
+	#RewriteCond %{HTTP:Authorization} .
+	#RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
 	# If you installed Skeleton in a subfolder, you will need to
 	# change the following line to match the subfolder you need.
 	# http://httpd.apache.org/docs/current/mod/mod_rewrite.html#rewritebase
