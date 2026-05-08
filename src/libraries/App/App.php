@@ -36,7 +36,16 @@ final class CI_App extends CI_Driver_Library
 	 *
 	 * @var array<string>
 	 */
-	protected $valid_drivers;
+	protected $valid_drivers = [];
+
+	/**
+	 * List of application drivers to load during runtime boot.
+	 *
+	 * These must also be registered in $valid_drivers.
+	 *
+	 * @var string[]
+	 */
+	protected $autoload_drivers = [];
 
 	// --------------------------------------------------------------------
 
@@ -61,12 +70,16 @@ final class CI_App extends CI_Driver_Library
 		 * the `app_drivers` filter when needed. However, default drivers
 		 * can be added here and the filter is left to modules and plugins.
 		 */
-		$this->valid_drivers = $this->ci->hooks->filter(
-			'app_drivers',
-			[], // Add default drivers here.
-			$this->ci,
-			$this
-		);
+		$custom_drivers = $this->ci->hooks->filter('app_drivers', [], $this->ci, $this);
+		if (!empty($custom_drivers)) {
+			$this->valid_drivers = array_merge_unique(
+				$this->valid_drivers,
+				$custom_drivers
+			);
+
+			// Reset drivers map cache.
+			$this->drivers_map = null;
+		}
 
 		// Skip runtime setup during installation.
 		if (CI_INSTALL) {
@@ -75,6 +88,22 @@ final class CI_App extends CI_Driver_Library
 
 		// Allow the application to hook into runtime execution.
 		$this->setup_runtime();
+
+		/**
+		 * Filter the list of application drivers to autoload.
+		 *
+		 * Applications, modules, or plugins may register drivers that should be
+		 * eagerly loaded after runtime setup. Each autoloaded driver must also
+		 * be registered through the `app_drivers` filter.
+		 */
+		$autoload_drivers = $this->ci->hooks->filter('app_autoload_drivers', [], $this->ci, $this);
+		if (!empty($autoload_drivers)) {
+			$this->autoload_drivers = array_merge_unique(
+				$this->autoload_drivers,
+				$autoload_drivers
+			);
+		}
+		$this->load_drivers($this->autoload_drivers);
 	}
 
 	// --------------------------------------------------------------------
