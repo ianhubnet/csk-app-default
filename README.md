@@ -1,4 +1,4 @@
-# 🧰 CSK App Default
+# 🧰 CiSkeleton Application — Default (Boilerplate)
 
 The **default application template** for [CiSkeleton (CSK)](https://github.com/ianhubnet).
 
@@ -31,8 +31,8 @@ cd csk-app-name
 ## 📦 Related Repositories
 
 * [`csk-core`](https://github.com/ianhubnet) — Framework core *(Private)*
-* [`csk-packages`](https://github.com/ianhubnet/csk-packages) — Modules and themes *(Private)*
-* [`csk-lang-english`](https://github.com/ianhubnet/csk-lang-english) — Default translations *(Public)*
+* [`csk-packages`](https://github.com/ianhubnet/csk-packages) — Modules, plugins, themes, and languages *(Public Index)*
+* [`csk-lang-english`](https://github.com/ianhubnet/csk-lang-english) — English translation *(Public)*
 
 ---
 
