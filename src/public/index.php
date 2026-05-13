@@ -88,7 +88,7 @@ ob_start(); // Start output buffering to ensure headers can be sent later.
 	define('FCPATH', __DIR__.DIRECTORY_SEPARATOR);
 
 	// Path to CiSkeleton system folder
-	define('BASEPATH', $resolve('skeleton', 'system').DIRECTORY_SEPARATOR);
+	define('BASEPATH', $resolve('system', 'system').DIRECTORY_SEPARATOR);
 
 	// Path to the application folder
 	define('APPPATH', $resolve('application', 'application').DIRECTORY_SEPARATOR);
