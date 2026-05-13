@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 /*!
  * CiSkeleton - Default App
  * Copyright 2018-present Kader Bouyakoub (https://github.com/bkader)
@@ -61,68 +62,78 @@ textarea {
 	padding-block: 1rem;
 }
 
-/* Fixes horizontal scroll */
-.row {
-	/*margin-inline: 0;*/
-}
-
-.wrapper-auth {
+body.layout-auth > .wrapper {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	margin-block-start: 0;
 }
 
-.wrapper-centered .row {
+body.layout-centered > .wrapper .row {
 	--bs-gutter-x: 1rem;
 	--bs-gutter-y: 1rem;
 	justify-content: center;
 }
 
-.wrapper-auth .row {
+body.layout-auth > .wrapper .row {
 	justify-content: center;
 }
 
-.wrapper-focus .row {
+body.layout-focus > .wrapper .row {
 	--bs-gutter-x: 1.5rem;
 	--bs-gutter-y: 1.5rem;
 }
 
-.wrapper-focus aside {
+body.layout-focus > .wrapper aside {
 	display: none;
 }
 
-.wrapper-dashboard .row {
+body.layout-dashboard > .wrapper .row {
 	--bs-gutter-x: 1.5rem;
 	--bs-gutter-y: 1.5rem;
 }
 
-.wrapper-dashboard aside {
+body.layout-dashboard > .wrapper aside {
 	display: flex;
 	flex-direction: column;
 	gap: 1.5rem;
 }
 
-.wrapper-double .row {
+body.layout-double > .wrapper .row {
 	--bs-gutter-x: 1.5rem;
 	--bs-gutter-y: 1.5rem;
 }
 
-.wrapper-double aside {
+body.layout-double > .wrapper aside {
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
 }
 
-.wrapper-triple .row {
+body.layout-triple > .wrapper .row {
 	--bs-gutter-x: 1rem;
 	--bs-gutter-y: 1rem;
 }
 
-.wrapper-triple aside {
+body.layout-triple > .wrapper aside {
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
+}
+
+.card > .alert {
+	--bs-alert-padding-x: .625rem;
+	--bs-alert-padding-y: .625rem;
+	border-radius: 0;
+}
+
+.card > .alert-dismissible {
+	margin: .25rem;
+	padding-inline-end: 2.5rem;
+}
+
+.card > .alert > .btn-close {
+	font-size: .625rem;
 }
 
 /* === FOOTER === */
@@ -286,7 +297,7 @@ textarea {
 		border-inline-start: 1px solid rgba(var(--bs-white-rgb), .2);
 	}
 
-	.wrapper-focus aside {
+	body.layout-focus > .wrapper aside {
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
