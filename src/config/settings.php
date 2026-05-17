@@ -51,9 +51,19 @@
  * @since       0.0.1
  */
 
-$config['settings']['app'] = [
-	'title' => 'settings_website',
-	'label' => 'website',
-	'icon'  => 'globe',
-	'fields' => [],
+// --------------------------------------------------------------------
+// Extend Website Settings
+// --------------------------------------------------------------------
+$config['settings']['app']['fields'] = [
+
+	// Add your fields here:
+	// 'example_field' => [
+	// 	'type' => 'text',
+	// 	'default' => 'default value',
+	// 	'rules' => [
+	// 		'trim',
+	// 		'required',
+	// 	],
+	// ],
+
 ];
